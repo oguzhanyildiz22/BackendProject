@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +23,7 @@ import com.microservice.UserService.business.requests.AddUserRequest;
 import com.microservice.UserService.business.requests.UpdateUserRequest;
 
 @RestController
-@RequestMapping("api/test")
+@RequestMapping("api/user")
 public class UserController {
 
 	@Autowired
@@ -62,7 +61,7 @@ public class UserController {
 		}
 		return false;
 	}
-	@PostMapping("/addUser")
+	@PostMapping("/add")
 	public String add(@RequestBody AddUserRequest addUserRequest,@RequestHeader("Authorization") String authorizationHeader) {
 		
 		if(checkRole(authorizationHeader)) {
@@ -73,7 +72,7 @@ public class UserController {
 		return "did not add";
 		
 	}
-	@PutMapping("/updateUser")
+	@PutMapping("/update")
 	public String update(@RequestBody UpdateUserRequest updateUserRequest,@RequestHeader("Authorization") String authorizationHeader) {
 		 
 		if (checkRole(authorizationHeader)) {
