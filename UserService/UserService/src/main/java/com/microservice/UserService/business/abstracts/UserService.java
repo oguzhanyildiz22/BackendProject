@@ -52,5 +52,11 @@ public interface UserService {
 	 */
 	Page<UserResponse> getVehicles(int no, int size, String sortBy, String sortDirection);
 	
-	public boolean checkRole(@RequestHeader("Authorization") String authorizationHeader);
+	/**
+	 * Checks if the user associated with the provided authorization header has the required role.
+	 *
+	 * @param authorizationHeader The Authorization header containing the JWT token.
+	 * @return {@code true} if the user has the required role, {@code false} otherwise.
+	 */
+	boolean checkRole(@RequestHeader("Authorization") String authorizationHeader);
 }
