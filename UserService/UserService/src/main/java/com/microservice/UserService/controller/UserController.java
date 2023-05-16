@@ -81,7 +81,7 @@ public class UserController {
 			@RequestParam String sortBy,
 			@RequestParam String sortDirection){
 		if (userService.checkRole(authorizationHeader)) {
-			Page<UserResponse> users = userService.getVehicles(no, size,sortBy,sortDirection);
+			Page<UserResponse> users = userService.getUsers(no, size,sortBy,sortDirection);
 			return new ResponseEntity<>(users, HttpStatus.OK);
 		}
 		

@@ -50,7 +50,7 @@ public interface UserService {
 	 * @param sortDirection  The direction of the sorting (ascending or descending).
 	 * @return A Page object containing the requested list of vehicles.
 	 */
-	Page<UserResponse> getVehicles(int no, int size, String sortBy, String sortDirection);
+	Page<UserResponse> getUsers(int no, int size, String sortBy, String sortDirection);
 	
 	/**
 	 * Checks if the user associated with the provided authorization header has the required role.
