@@ -1,9 +1,11 @@
 package com.microservice.UserService.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -21,6 +24,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.microservice.UserService.business.abstracts.UserService;
 import com.microservice.UserService.business.requests.AddUserRequest;
 import com.microservice.UserService.business.requests.UpdateUserRequest;
+import com.microservice.UserService.business.responses.UserResponse;
 
 @RestController
 @RequestMapping("api/user")
@@ -93,4 +97,18 @@ public class UserController {
 		}
 		return "did not deleted";
     }
+	
+	@GetMapping("/page")
+	public ResponseEntity<Page<UserResponse>> getUsers(@RequestHeader("Authorization") String authorizationHeader,
+			@RequestParam int no,
+			@RequestParam int size,
+			@RequestParam String sortBy,
+			@RequestParam String sortDirection){
+		if (checkRole(authorizationHeader)) {
+			Page<UserResponse> users = userService.getVehicles(no, size,sortBy,sortDirection);
+			return new ResponseEntity<>(users, HttpStatus.OK);
+		}
+		
+		return new ResponseEntity<Page<UserResponse>>(HttpStatus.UNAUTHORIZED);
+	}
 }
