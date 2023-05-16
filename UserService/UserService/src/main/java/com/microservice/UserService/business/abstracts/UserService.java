@@ -1,6 +1,7 @@
 package com.microservice.UserService.business.abstracts;
 
 import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.microservice.UserService.business.requests.AddUserRequest;
 import com.microservice.UserService.business.requests.UpdateUserRequest;
@@ -50,4 +51,6 @@ public interface UserService {
 	 * @return A Page object containing the requested list of vehicles.
 	 */
 	Page<UserResponse> getVehicles(int no, int size, String sortBy, String sortDirection);
+	
+	public boolean checkRole(@RequestHeader("Authorization") String authorizationHeader);
 }

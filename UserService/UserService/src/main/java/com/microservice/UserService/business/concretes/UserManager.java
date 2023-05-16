@@ -9,13 +9,19 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.microservice.UserService.business.abstracts.UserService;
 import com.microservice.UserService.business.requests.AddUserRequest;
 import com.microservice.UserService.business.requests.UpdateUserRequest;
 import com.microservice.UserService.business.responses.UserResponse;
+import com.microservice.UserService.config.RestTemplateConfig;
 import com.microservice.UserService.core.ModelMapperService;
 import com.microservice.UserService.entity.Role;
 import com.microservice.UserService.entity.User;
@@ -35,6 +41,12 @@ public class UserManager implements UserService {
 	private ModelMapperService modelMapperService;
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@Autowired
+	private RestTemplateConfig config;
 	 
 
 	
@@ -104,6 +116,24 @@ public class UserManager implements UserService {
 	    	    .map(defect -> modelMapperService.forResponse().map(defect, UserResponse.class))
 	    	    .collect(Collectors.toList());
 		return  new PageImpl<>(responseList, pageable, pageVehicles.getTotalElements());
+	}
+
+	@Override
+	public boolean checkRole(String authorizationHeader) {
+		
+		HttpHeaders headers = new HttpHeaders();
+
+		headers.set("Authorization", authorizationHeader);
+		HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+
+		ResponseEntity<String> response = restTemplate.exchange(config.getUrl1(), HttpMethod.GET, entity, String.class);
+
+		String roles = response.getBody();
+
+		if (roles.contains("ADMIN")) {
+			return true;
+		}
+		return false;
 	}
 	
 	 

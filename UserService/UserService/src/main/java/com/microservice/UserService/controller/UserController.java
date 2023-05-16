@@ -2,9 +2,6 @@ package com.microservice.UserService.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -31,44 +27,24 @@ import com.microservice.UserService.business.responses.UserResponse;
 public class UserController {
 
 	@Autowired
-	private RestTemplate restTemplate;
-
-	private String url1 = "http://localhost:8000/api/auth/getRole";
-	@Autowired
 	private UserService userService;
 
 	@GetMapping("/admin")
 	public String admin(@RequestHeader("Authorization") String authorizationHeader)
 			throws JsonMappingException, JsonProcessingException {
 
-		if (checkRole(authorizationHeader)) {
+		if (userService.checkRole(authorizationHeader)) {
 			return "hello admin";
 		} else {
 			return "You do not have ADMIN authority";
 		}
 	}
 
-	// check role by using authorizationHeader
-	public boolean checkRole(@RequestHeader("Authorization") String authorizationHeader) {
-
-		HttpHeaders headers = new HttpHeaders();
-
-		headers.set("Authorization", authorizationHeader);
-		HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
-
-		ResponseEntity<String> response = restTemplate.exchange(url1, HttpMethod.GET, entity, String.class);
-
-		String roles = response.getBody();
-
-		if (roles.contains("ADMIN")) {
-			return true;
-		}
-		return false;
-	}
+	
 	@PostMapping("/add")
 	public String add(@RequestBody AddUserRequest addUserRequest,@RequestHeader("Authorization") String authorizationHeader) {
 		
-		if(checkRole(authorizationHeader)) {
+		if(userService.checkRole(authorizationHeader)) {
 			this.userService.addUser(addUserRequest);
 			
 			return "added";
@@ -79,7 +55,7 @@ public class UserController {
 	@PutMapping("/update")
 	public String update(@RequestBody UpdateUserRequest updateUserRequest,@RequestHeader("Authorization") String authorizationHeader) {
 		 
-		if (checkRole(authorizationHeader)) {
+		if (userService.checkRole(authorizationHeader)) {
 			this.userService.updateUser(updateUserRequest);
 			return "user updated";
 		}
@@ -91,7 +67,7 @@ public class UserController {
 	@DeleteMapping("/delete/{id}")
     public String softDeleteUserById(@PathVariable("id") int userId,@RequestHeader("Authorization") String authorizationHeader) {
        
-		if (checkRole(authorizationHeader)) {
+		if (userService.checkRole(authorizationHeader)) {
 			userService.softDeleteUserById(userId);
 	        return "deleted";
 		}
@@ -104,7 +80,7 @@ public class UserController {
 			@RequestParam int size,
 			@RequestParam String sortBy,
 			@RequestParam String sortDirection){
-		if (checkRole(authorizationHeader)) {
+		if (userService.checkRole(authorizationHeader)) {
 			Page<UserResponse> users = userService.getVehicles(no, size,sortBy,sortDirection);
 			return new ResponseEntity<>(users, HttpStatus.OK);
 		}
