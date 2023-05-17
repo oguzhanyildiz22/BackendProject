@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,12 +38,17 @@ public class VehicleDefectController {
 	private ModelMapperService modelMapperService;
 
 	@PostMapping("add/{vehicleId}")
-	public ResponseEntity<String> addDefect(@PathVariable String vehicleId,@RequestBody CreateDefectRequest request ) throws IOException{
-		
-		if (vehicleService.existByVehicleId(vehicleId)) {
+	public ResponseEntity<String> addDefect(@PathVariable String vehicleId,
+			@RequestBody CreateDefectRequest request,
+			@RequestHeader("Authorization") String authorizationHeader ) throws IOException{
+		if (vehicleService.checkOperatorRole(authorizationHeader)) {
 			
-			vehicleDefectService.addDefect(request,vehicleId);
-			return ResponseEntity.ok("Hata başarıyla eklendi.");
+			if (vehicleService.existByVehicleId(vehicleId)) {
+				
+				vehicleDefectService.addDefect(request,vehicleId);
+				return ResponseEntity.ok("Hata başarıyla eklendi.");
+			}
+			
 		}
 		
 		return new ResponseEntity<String>("bad request", HttpStatus.BAD_REQUEST);
@@ -53,11 +59,15 @@ public class VehicleDefectController {
 			@RequestParam int no,
 			@RequestParam int size,
 			@RequestParam String sortBy,
-			@RequestParam String sortDirection){
-		
-		Page<VehicleDefectResponse> vehicleDefectDTOPage = vehicleDefectService.getAllDefects(no, size, sortBy, sortDirection);
+			@RequestParam String sortDirection,
+			@RequestHeader("Authorization") String authorizationHeader ){
+		if (vehicleService.checkTeamLeaderRole(authorizationHeader)) {
+			Page<VehicleDefectResponse> vehicleDefectDTOPage = vehicleDefectService.getAllDefects(no, size, sortBy, sortDirection);
 
-	    return new ResponseEntity<>(vehicleDefectDTOPage, HttpStatus.OK);
+		    return new ResponseEntity<>(vehicleDefectDTOPage, HttpStatus.OK);
+		}
+	    return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+
 	}
 	
 	@GetMapping("get/{field}")
@@ -65,11 +75,14 @@ public class VehicleDefectController {
 			@RequestParam int no,
 			@RequestParam int size,
 			@RequestParam String sortBy,
-			@RequestParam String sortDirection){
-		
-		Page<VehicleDefectResponse> vehicleDefectDTOPage = vehicleDefectService.getAllDefectsByVehicleId(field,no, size, sortBy, sortDirection);
+			@RequestParam String sortDirection,
+			@RequestHeader("Authorization") String authorizationHeader){
+		if (vehicleService.checkTeamLeaderRole(authorizationHeader)) {
+			Page<VehicleDefectResponse> vehicleDefectDTOPage = vehicleDefectService.getAllDefectsByVehicleId(field,no, size, sortBy, sortDirection);
 
-	    return new ResponseEntity<>(vehicleDefectDTOPage, HttpStatus.OK);
+		    return new ResponseEntity<>(vehicleDefectDTOPage, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}
 		
 	}

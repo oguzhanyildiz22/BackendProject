@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,25 +28,33 @@ public class ImageController {
 	private VehicleService vehicleService;
 
 	@PostMapping("/save/{vehicleId}")
-	public String saveImage(@PathVariable String vehicleId, MultipartFile file) throws Exception {
-		
-		if (vehicleService.existByVehicleId(vehicleId)) {
-			byte[] image = file.getBytes();
-			service.saveImage(vehicleId, image);
-			return "resim başrıyla kaydedildi";
+	public String saveImage(@PathVariable String vehicleId,
+			MultipartFile file,
+			@RequestHeader("Authorization") String authorizationHeader) throws Exception {
+		if (vehicleService.checkOperatorRole(authorizationHeader)) {
+			
+			if (vehicleService.existByVehicleId(vehicleId)) {
+				byte[] image = file.getBytes();
+				service.saveImage(vehicleId, image);
+				return "resim başrıyla kaydedildi";
+			}
 		}
+		
 		
 		return "araç bulunamadı : " +vehicleId ;
 	}
 	
 	@GetMapping("/get-image/{vehicleId}")
-	public ResponseEntity<byte[]> getImage(@PathVariable String vehicleId) throws Exception {
-		
-		HttpHeaders headers = new HttpHeaders();
-		 headers.setContentType(MediaType.IMAGE_PNG);
-		
-		 byte[] savedImage = service.getImage(vehicleId);
-		 return new ResponseEntity<>(savedImage, headers, HttpStatus.OK);
+	public ResponseEntity<byte[]> getImage(@PathVariable String vehicleId,
+			@RequestHeader("Authorization") String authorizationHeader) throws Exception {
+		if (vehicleService.checkOperatorRole(authorizationHeader)) {
+			HttpHeaders headers = new HttpHeaders();
+			 headers.setContentType(MediaType.IMAGE_PNG);
+			
+			 byte[] savedImage = service.getImage(vehicleId);
+			 return new ResponseEntity<>(savedImage, headers, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}
 	
 	

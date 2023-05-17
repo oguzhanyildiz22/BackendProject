@@ -9,11 +9,17 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.microservice.DefectService.business.abstracts.VehicleService;
 import com.microservice.DefectService.business.requests.CreateVehicleRequest;
 import com.microservice.DefectService.business.responses.VehicleResponse;
+import com.microservice.DefectService.config.RestTemplateConfig;
 import com.microservice.DefectService.entity.Vehicle;
 import com.microservice.DefectService.mapper.ModelMapperService;
 import com.microservice.DefectService.repository.VehicleRepository;
@@ -25,6 +31,13 @@ public class VehicleManager implements VehicleService{
 
 	@Autowired
 	private ModelMapperService modelMapperService;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@Autowired
+	private RestTemplateConfig config;
+	
 	
 	@Override
 	public void add(CreateVehicleRequest createVehicleRequest) {
@@ -64,6 +77,47 @@ public class VehicleManager implements VehicleService{
 		vehicleRepository.delete(vehicle);
     }
 
+	@Override
+	public boolean checkOperatorRole(String authorizationHeader) {
+		
+		
+	        HttpHeaders headers = new HttpHeaders();
+	        headers.set("Authorization", authorizationHeader);
+	        HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+
+	        ResponseEntity<String> response = restTemplate.exchange(config.getUrl1(), HttpMethod.GET, entity, String.class);
+
+	        String roles = response.getBody();
+
+	        if (roles.contains("OPERATOR")) {
+	           
+	            return true;
+	        }
+
+	        
+	        return false;
+	    
+	}
+
+	@Override
+	public boolean checkTeamLeaderRole(String authorizationHeader) {
+		
+		    HttpHeaders headers = new HttpHeaders();
+	        headers.set("Authorization", authorizationHeader);
+	        HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+
+	        ResponseEntity<String> response = restTemplate.exchange(config.getUrl1(), HttpMethod.GET, entity, String.class);
+
+	        String roles = response.getBody();
+
+	        if (roles.contains("TEAM_LEADER")) {
+	           
+	            return true;
+	        }
+
+	        
+	        return false;
+	}
 	
 	
 	
