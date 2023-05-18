@@ -1,5 +1,7 @@
 package com.microservice.DefectService.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,9 @@ public class DefectLocationController {
 	
 	@Autowired
 	private VehicleService vehicleService;
+	
+	private static final Logger logger = LogManager.getLogger(DefectLocationController.class);
+
 
 	@GetMapping("/get")
 	public ResponseEntity<Page<DefectLocationResponse>> getSehirler(@RequestParam int no,
@@ -30,11 +35,18 @@ public class DefectLocationController {
 			@RequestParam String sortBy,
 			@RequestParam String sortDirection,
 			@RequestHeader("Authorization") String authorizationHeader) {
+		logger.info("Get Sehirler endpoint called with no: {}, size: {}, sortBy: {}, sortDirection: {}, and authorization header: {}",
+				no, size, sortBy, sortDirection, authorizationHeader);
+		
 		if (vehicleService.checkTeamLeaderRole(authorizationHeader)) {
-			Page<DefectLocationResponse> vehicles = defectLocationService.getVehicles(no, size,sortBy,sortDirection);
-			 return new ResponseEntity<>(vehicles, HttpStatus.OK);
+			logger.info("User has TEAM LEADER role.");
+			
+			Page<DefectLocationResponse> vehicles = defectLocationService.getVehicles(no, size, sortBy, sortDirection);
+			return new ResponseEntity<>(vehicles, HttpStatus.OK);
 		}
-		return new ResponseEntity<>( HttpStatus.UNAUTHORIZED);
+		
+		logger.warn("Unauthorized access to Get Sehirler endpoint.");
+		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}
 
 }

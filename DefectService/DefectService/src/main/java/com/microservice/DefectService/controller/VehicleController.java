@@ -1,5 +1,7 @@
 package com.microservice.DefectService.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -25,46 +27,63 @@ public class VehicleController {
 	@Autowired
 	private VehicleService vehicleService;
 	
+	private static final Logger logger = LogManager.getLogger(VehicleController.class);
 	
 	@PostMapping("/add")
-    public ResponseEntity<String> addVehicle(@RequestBody CreateVehicleRequest request,
-    		@RequestHeader("Authorization") String authorizationHeader) {
-        
-		if (vehicleService.checkOperatorRole(authorizationHeader)) {
-        	 vehicleService.add(request);
-             return ResponseEntity.ok("Araç başarıyla eklendi.");
-		}
-		
-            return new ResponseEntity<>("Araç eklenemdi",HttpStatus.BAD_REQUEST);
-        
-    }
+	public ResponseEntity<String> addVehicle(@RequestBody CreateVehicleRequest request,
+	        @RequestHeader("Authorization") String authorizationHeader) {
+	    
+	    logger.info("AddVehicle endpoint called with authorization header: {}", authorizationHeader);
+	    
+	    if (vehicleService.checkOperatorRole(authorizationHeader)) {
+	        logger.info("User has OPERATOR role. Adding vehicle with request: {}", request);
+	        
+	        vehicleService.add(request);
+	        
+	        return ResponseEntity.ok("Araç başarıyla eklendi.");
+	    } else {
+	        logger.warn("User does not have OPERATOR role. Access unauthorized.");
+	        return new ResponseEntity<>("Araç eklenemedi", HttpStatus.BAD_REQUEST);
+	    }
+	}
 	
 	
 	@GetMapping("/get")
 	public ResponseEntity<Page<VehicleResponse>> getVehicles(@RequestParam int no,
-			@RequestParam int size,
-			@RequestParam String sortBy,
-			@RequestParam String sortDirection,
-			@RequestHeader("Authorization") String authorizationHeader) {
-		
-		if (vehicleService.checkTeamLeaderRole(authorizationHeader)) {
-			Page<VehicleResponse> vehicles = vehicleService.getVehicles(no, size,sortBy,sortDirection);
-			 return new ResponseEntity<>(vehicles, HttpStatus.OK);
-		}
-		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+	        @RequestParam int size,
+	        @RequestParam String sortBy,
+	        @RequestParam String sortDirection,
+	        @RequestHeader("Authorization") String authorizationHeader) {
+	    
+	    logger.info("GetVehicles endpoint called with authorization header: {}", authorizationHeader);
+	    
+	    if (vehicleService.checkTeamLeaderRole(authorizationHeader)) {
+	        logger.info("User has TEAM_LEADER role. Retrieving vehicles with parameters: no={}, size={}, sortBy={}, sortDirection={}", no, size, sortBy, sortDirection);
+	        
+	        Page<VehicleResponse> vehicles = vehicleService.getVehicles(no, size, sortBy, sortDirection);
+	        
+	        return new ResponseEntity<>(vehicles, HttpStatus.OK);
+	    } else {
+	        logger.warn("User does not have TEAM_LEADER role. Access unauthorized.");
+	        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+	    }
 	}
 	
 	
 	@DeleteMapping("/{vehicleId}")
-	    public String delete(@PathVariable String vehicleId,
-	    		@RequestHeader("Authorization") String authorizationHeader) {
-		 if (vehicleService.checkOperatorRole(authorizationHeader)) {
-			 vehicleService.delete(vehicleId);
-		        return "deleted";
-		}
-		 
-		 return "vehicle not deleted";
-		
+	public String delete(@PathVariable String vehicleId,
+	        @RequestHeader("Authorization") String authorizationHeader) {
+	    
+	    logger.info("Delete endpoint called with vehicleId: {} and authorization header: {}", vehicleId, authorizationHeader);
+	    
+	    if (vehicleService.checkOperatorRole(authorizationHeader)) {
+	        logger.info("User has OPERATOR role. Deleting vehicle with vehicleId: {}", vehicleId);
+	        
+	        vehicleService.delete(vehicleId);
+	        return "deleted";
+	    } else {
+	        logger.warn("User does not have OPERATOR role. Vehicle not deleted.");
+	        return "vehicle not deleted";
 	    }
-
+	}
 }
