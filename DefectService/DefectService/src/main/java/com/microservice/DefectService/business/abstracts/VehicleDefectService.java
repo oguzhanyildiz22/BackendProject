@@ -3,6 +3,7 @@ package com.microservice.DefectService.business.abstracts;
 import java.io.IOException;
 
 import org.springframework.data.domain.Page;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.microservice.DefectService.business.requests.CreateDefectRequest;
 import com.microservice.DefectService.business.responses.VehicleDefectResponse;

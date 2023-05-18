@@ -1,7 +1,8 @@
 package com.microservice.DefectService.business.requests;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ public class CreateDefectRequest {
 
 	
 	private String defectType;
-	private List<CreateDefectLocations> defectLocations = new ArrayList<>();
+	private MultipartFile file;
+	private List<CreateDefectLocations> defectLocations;
 	
 }

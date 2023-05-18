@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.microservice.DefectService.business.abstracts.DefectLocationService;
 import com.microservice.DefectService.business.abstracts.VehicleDefectService;
@@ -38,8 +40,9 @@ public class VehicleDefectController {
 	private ModelMapperService modelMapperService;
 
 	@PostMapping("add/{vehicleId}")
-	public ResponseEntity<String> addDefect(@PathVariable String vehicleId,
-			@RequestBody CreateDefectRequest request,
+	public ResponseEntity<String> addDefect(@PathVariable String vehicleId,@ModelAttribute
+		CreateDefectRequest request,
+			
 			@RequestHeader("Authorization") String authorizationHeader ) throws IOException{
 		if (vehicleService.checkOperatorRole(authorizationHeader)) {
 			

@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.microservice.DefectService.business.abstracts.VehicleDefectService;
 import com.microservice.DefectService.business.requests.CreateDefectRequest;
@@ -44,6 +45,7 @@ public class VehicleDefectManager implements VehicleDefectService {
 		
 		VehicleDefect defect  = new VehicleDefect();
 		defect.setDefectType(request.getDefectType());
+		defect.setImage(request.getFile().getBytes());
 		defect.setVehicle(vehicle);
 		
 		 List<DefectLocation> locations = request.getDefectLocations().stream().map(location -> {

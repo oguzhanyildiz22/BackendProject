@@ -37,9 +37,7 @@ public class Vehicle {
     @OneToMany(mappedBy = "vehicle",cascade = CascadeType.REMOVE)
     private List<VehicleDefect> defects = new ArrayList<>();
     
-    @JsonIgnore
-    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.REMOVE)
-    private List<ImageData> imageData = new ArrayList<>();
+    
     
     private boolean deleted;
 }
