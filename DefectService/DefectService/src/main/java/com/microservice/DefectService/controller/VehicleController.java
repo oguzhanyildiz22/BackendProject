@@ -40,10 +40,10 @@ public class VehicleController {
 	        
 	        vehicleService.add(request);
 	        
-	        return ResponseEntity.ok("Araç başarıyla eklendi.");
+	        return ResponseEntity.ok("The vehicle has been successfully added.");
 	    } else {
 	        logger.warn("User does not have OPERATOR role. Access unauthorized.");
-	        return new ResponseEntity<>("Araç eklenemedi", HttpStatus.BAD_REQUEST);
+	        return new ResponseEntity<>("Failed to add vehicle", HttpStatus.BAD_REQUEST);
 	    }
 	}
 	
@@ -80,10 +80,10 @@ public class VehicleController {
 	        logger.info("User has OPERATOR role. Deleting vehicle with vehicleId: {}", vehicleId);
 	        
 	        vehicleService.delete(vehicleId);
-	        return "deleted";
+	        return "Vehicle deleted successfully";
 	    } else {
 	        logger.warn("User does not have OPERATOR role. Vehicle not deleted.");
-	        return "vehicle not deleted";
+	        return "Unauthorized action";
 	    }
 	}
 }

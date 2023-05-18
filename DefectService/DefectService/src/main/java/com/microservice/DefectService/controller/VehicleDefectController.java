@@ -49,12 +49,12 @@ public class VehicleDefectController {
 				logger.info("Vehicle exists with vehicleId: {}. Adding defect.", vehicleId);
 
 				vehicleDefectService.addDefect(request, vehicleId);
-				return ResponseEntity.ok("Hata başarıyla eklendi.");
+				return ResponseEntity.ok("The defect has been successfully added");
 			}
 		}
 
-		logger.warn("Bad request. Defect not added.");
-		return new ResponseEntity<String>("bad request", HttpStatus.BAD_REQUEST);
+		logger.warn("Unauthorized action. Defect not added.");
+		return new ResponseEntity<String>("Unauthorized action", HttpStatus.UNAUTHORIZED);
 	}
 
 	@GetMapping("get")

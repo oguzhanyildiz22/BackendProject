@@ -30,12 +30,12 @@ public class DefectLocationController {
 
 
 	@GetMapping("/get")
-	public ResponseEntity<Page<DefectLocationResponse>> getSehirler(@RequestParam int no,
+	public ResponseEntity<Page<DefectLocationResponse>> getDefects(@RequestParam int no,
 			@RequestParam int size,
 			@RequestParam String sortBy,
 			@RequestParam String sortDirection,
 			@RequestHeader("Authorization") String authorizationHeader) {
-		logger.info("Get Sehirler endpoint called with no: {}, size: {}, sortBy: {}, sortDirection: {}, and authorization header: {}",
+		logger.info("Get Locations of Defect endpoint called with no: {}, size: {}, sortBy: {}, sortDirection: {}, and authorization header: {}",
 				no, size, sortBy, sortDirection, authorizationHeader);
 		
 		if (vehicleService.checkTeamLeaderRole(authorizationHeader)) {
@@ -45,7 +45,7 @@ public class DefectLocationController {
 			return new ResponseEntity<>(vehicles, HttpStatus.OK);
 		}
 		
-		logger.warn("Unauthorized access to Get Sehirler endpoint.");
+		logger.warn("Unauthorized access to Get Vehşcles endpoint.");
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}
 
