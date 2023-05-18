@@ -19,4 +19,5 @@ public interface VehicleDefectRepository extends JpaRepository<VehicleDefect, Lo
 
 
 
+
 }
