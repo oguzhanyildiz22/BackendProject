@@ -123,4 +123,6 @@ public class VehicleDefectController {
 		return new ResponseEntity<>(nullImage, headers, HttpStatus.UNAUTHORIZED);
 	}
 
+	
+
 }

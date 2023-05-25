@@ -54,4 +54,8 @@ public interface VehicleDefectService {
 	 */
 	byte[] getImage(String vehicleId) throws IOException;
 
+	
+	
+	
+
 }

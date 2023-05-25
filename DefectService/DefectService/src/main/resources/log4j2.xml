@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
 	<Properties>
-		<Property name="filename">C:\Users\oguzy\Desktop\BackEnd Project\TokenService\TokenService\logs\token.log</Property>
+		<Property name="filename">C:\Users\oguzy\Desktop\BackEnd Project\DefectService\DefectService\logs\defect.log</Property>
 	</Properties>
 	<Appenders>
 		<Console name="STDOUT" target="SYSTEM_OUT">

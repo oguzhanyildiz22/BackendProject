@@ -12,7 +12,7 @@ import lombok.Data;
 public class RestTemplateConfig {
 
    
-    private String url1 = "http://localhost:8000/api/auth/getRole";
+	private String url1 = "http://Container-B:8000/api/auth/getRole";
 
     @Bean
     public RestTemplate restTemplate() {

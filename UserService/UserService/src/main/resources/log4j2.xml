@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="DEBUG">
 	<Properties>
-		<Property name="filename">C:\Users\oguzy\Desktop\user.log</Property>
+		<Property name="filename">C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService\logs\user.log</Property>
 	</Properties>
 	<Appenders>
 		<Console name="STDOUT" target="SYSTEM_OUT">
@@ -14,7 +14,7 @@
 		</File>
 	</Appenders>
 	<Loggers>
-		<Root level="debug">
+		<Root level="INFO">
 			<AppenderRef ref="STDOUT" />
 			<AppenderRef ref="file" />
 		</Root>

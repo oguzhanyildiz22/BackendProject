@@ -45,7 +45,7 @@ public class DefectLocationController {
 			return new ResponseEntity<>(vehicles, HttpStatus.OK);
 		}
 		
-		logger.warn("Unauthorized access to Get Vehşcles endpoint.");
+		logger.warn("Unauthorized access to Get Vehicles endpoint.");
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}
 

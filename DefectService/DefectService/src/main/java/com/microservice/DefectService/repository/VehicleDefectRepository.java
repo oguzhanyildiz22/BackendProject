@@ -17,6 +17,7 @@ public interface VehicleDefectRepository extends JpaRepository<VehicleDefect, Lo
 
 	Page<VehicleDefect> findByVehicleId(String vehicleId, Pageable pageable);
 
+	
 
 
 
