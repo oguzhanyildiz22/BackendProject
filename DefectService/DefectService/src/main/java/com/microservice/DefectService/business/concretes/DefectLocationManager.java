@@ -29,6 +29,8 @@ public class DefectLocationManager implements DefectLocationService {
 	private ModelMapperService modelMapperService;
 
 	private static final Logger logger = LogManager.getLogger(DefectLocationManager.class);
+	
+	
 
 //	@Override
 //	public Page<DefectLocationResponse> getVehicles(int no, int size, String sortBy, String sortDirection) {

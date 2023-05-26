@@ -1,7 +1,5 @@
 package com.microservice.UserService;
 
-import static org.mockito.Mockito.mockitoSession;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

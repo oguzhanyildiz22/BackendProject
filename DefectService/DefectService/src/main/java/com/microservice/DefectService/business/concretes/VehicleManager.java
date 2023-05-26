@@ -42,26 +42,12 @@ public class VehicleManager implements VehicleService{
 	
 	private static final Logger logger = LogManager.getLogger(VehicleManager.class);
 
-	
-//	@Override
-//	public void add(CreateVehicleRequest createVehicleRequest) {
-//		
-//		if (existByVehicleId(createVehicleRequest.getVehicleId())) {
-//			throw new RuntimeException("there is already in use");
-//		}
-//			Vehicle vehicle = new Vehicle();
-//			vehicle.setVehicleId(createVehicleRequest.getVehicleId());
-//	
-//	     vehicleRepository.save(vehicle);
-//	     
-//		}
 	@Override
 	public void add(CreateVehicleRequest createVehicleRequest) {
 	    String vehicleId = createVehicleRequest.getVehicleId();
 	    
-	    if (existByVehicleId(vehicleId)) {
+	    if (vehicleRepository.existsByVehicleId(vehicleId)) {
 	        logger.error("Vehicle with vehicleId {} already exists.", vehicleId);
-	        throw new RuntimeException("Vehicle already exists");
 	    }
 	    
 	    Vehicle vehicle = new Vehicle();
@@ -178,6 +164,7 @@ public class VehicleManager implements VehicleService{
 	        return false;
 	    }
 	}
+	
 //	@Override
 //	public boolean checkTeamLeaderRole(String authorizationHeader) {
 //		

@@ -47,6 +47,7 @@ public class VehicleDefectManager implements VehicleDefectService {
 	private VehicleRepository vehicleRepository;
 	
 	private static final Logger logger = LogManager.getLogger(VehicleDefectManager.class);
+	
 
 
 //	@Override
@@ -244,6 +245,7 @@ public class VehicleDefectManager implements VehicleDefectService {
 	    return outputStream.toByteArray();
 	}
 
+	
 	
 	
 }
