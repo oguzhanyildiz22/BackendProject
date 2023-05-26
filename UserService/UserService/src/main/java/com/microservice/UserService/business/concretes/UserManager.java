@@ -50,21 +50,9 @@ public class UserManager implements UserService {
 	private RestTemplateConfig config;
 	
 	
+	
 	 
 	private static final Logger logger = LogManager.getLogger(UserManager.class);
-
-	
-	public UserManager(UserRepository userRepository, RoleRepository roleRepository,
-			ModelMapperService modelMapperService, PasswordEncoder passwordEncoder, RestTemplate restTemplate,
-			RestTemplateConfig config) {
-		super();
-		this.userRepository = userRepository;
-		this.roleRepository = roleRepository;
-		this.modelMapperService = modelMapperService;
-		this.passwordEncoder = passwordEncoder;
-		this.restTemplate = restTemplate;
-		this.config = config;
-	}
 
 	@Override
 	public String addUser(AddUserRequest addUserRequest) {
