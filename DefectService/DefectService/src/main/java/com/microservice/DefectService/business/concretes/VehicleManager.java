@@ -85,7 +85,7 @@ public class VehicleManager implements VehicleService {
 	            no, size, sortBy, sortDirection);
 		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
 		Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-		Page<Vehicle> pageVehicles = vehicleRepository.findAll(pageable);
+		Page<Vehicle> pageVehicles = vehicleRepository.findAllActive(pageable);
 		List<VehicleResponse> responseList = pageVehicles.stream()
 				.map(vehicle -> modelMapperService.forResponse().map(vehicle, VehicleResponse.class))
 				.collect(Collectors.toList());
