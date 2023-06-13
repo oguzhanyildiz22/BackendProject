@@ -57,7 +57,7 @@ public class UserManager implements UserService {
 	@Override
 	public String addUser(AddUserRequest addUserRequest) {
 		try {
-	        logger.info("Adding user: {}", addUserRequest.getUsername());
+	        logger.info("Begign addUser method to add user: {}", addUserRequest.getUsername());
 
 	        User user = this.modelMapperService.forRequest().map(addUserRequest, User.class);
 	        user.setPassword(passwordEncoder.encode(addUserRequest.getPassword()));
@@ -88,7 +88,7 @@ public class UserManager implements UserService {
 	@Override
 	public String updateUser(UpdateUserRequest updateUserRequest) {
 		try {
-	        logger.info("Updating user: {}", updateUserRequest.getUsername());
+	        logger.info("Begin updateUser method to update user: {}", updateUserRequest.getUsername());
 
 	        User user = this.modelMapperService.forRequest().map(updateUserRequest, User.class);
 	        user.setPassword(passwordEncoder.encode(updateUserRequest.getPassword()));
@@ -119,7 +119,7 @@ public class UserManager implements UserService {
 	@Override
 	public User getUserById(int id) {
 		 try {
-		        logger.info("Getting user by ID: {}", id);
+		        logger.info("Begin getUserById Method to get user by ID: {}", id);
 
 		        User user = userRepository.findById(id).orElse(null);
 
@@ -140,7 +140,7 @@ public class UserManager implements UserService {
 	@Transactional
 	public void softDeleteUserById(int userId) {
 		 try {
-		        logger.info("Soft deleting user with ID: {}", userId);
+		        logger.info("Begin delete method to soft delete user with ID: {}", userId);
 
 		        userRepository.softDeleteById(userId);
 
@@ -154,12 +154,12 @@ public class UserManager implements UserService {
 	@Override
 	public Page<UserResponse> getUsers(int no, int size, String sortBy, String sortDirection) {
 		try {
-	        logger.info("Fetching users with pagination - Page: {}, Size: {}, SortBy: {}, SortDirection: {}",
+	        logger.info("Begin getUsers Method to Fetch users with pagination - Page: {}, Size: {}, SortBy: {}, SortDirection: {}",
 	                no, size, sortBy, sortDirection);
 
 	        Sort.Direction direction = Sort.Direction.fromString(sortDirection);
 	        Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-	        Page<User> pageVehicles = userRepository.findAll(pageable);
+	        Page<User> pageVehicles = userRepository.findAllActive(pageable);
 	        List<UserResponse> responseList = pageVehicles.stream()
 	                .map(user -> modelMapperService.forResponse().map(user, UserResponse.class))
 	                .collect(Collectors.toList());
@@ -177,7 +177,7 @@ public class UserManager implements UserService {
 	public boolean checkRole(String authorizationHeader) {
 		
 		try {
-	        logger.info("Checking user roles with authorization header: {}", authorizationHeader);
+	        logger.info("Begin checkRole Method to Check user roles with authorization header: {}", authorizationHeader);
 
 	        HttpHeaders headers = new HttpHeaders();
 	        headers.set("Authorization", authorizationHeader);

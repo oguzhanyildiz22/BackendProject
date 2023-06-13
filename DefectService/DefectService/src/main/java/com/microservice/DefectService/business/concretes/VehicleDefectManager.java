@@ -45,207 +45,124 @@ public class VehicleDefectManager implements VehicleDefectService {
 
 	@Autowired
 	private VehicleRepository vehicleRepository;
-	
+
 	private static final Logger logger = LogManager.getLogger(VehicleDefectManager.class);
-	
-
-
-//	@Override
-//	public void addDefect(CreateDefectRequest request, String vehicleId) throws IOException {
-//
-//		Vehicle vehicle = vehicleRepository.findByVehicleId(vehicleId);
-//
-//		VehicleDefect defect = new VehicleDefect();
-//		defect.setDefectType(request.getDefectType());
-//		defect.setImage(request.getFile().getBytes());
-//		defect.setVehicle(vehicle);
-//
-//		List<DefectLocation> locations = request.getDefectLocations().stream().map(location -> {
-//			DefectLocation defectLocation = new DefectLocation();
-//			defectLocation.setX(location.getX());
-//			defectLocation.setY(location.getY());
-//			defectLocation.setVehicleDefect(defect);
-//			return defectLocation;
-//		}).collect(Collectors.toList());
-//
-//		defect.setLocations(locations);
-//
-//		vehicleDefectRepository.save(defect);
-//
-//	}
 
 	@Override
 	public void addDefect(CreateDefectRequest request, String vehicleId) throws IOException {
-	    try {
-	        Vehicle vehicle = vehicleRepository.findByVehicleId(vehicleId);
+		
+		logger.info("Begin addDefect method to add vehicle's defect with vehicleId: {}",vehicleId);
+		try {
+			Vehicle vehicle = vehicleRepository.findByVehicleId(vehicleId);
 
-	        VehicleDefect defect = new VehicleDefect();
-	        defect.setDefectType(request.getDefectType());
-	        defect.setImage(request.getFile().getBytes());
-	        defect.setVehicle(vehicle);
+			VehicleDefect defect = new VehicleDefect();
+			defect.setDefectType(request.getDefectType());
+			defect.setImage(request.getFile().getBytes());
+			defect.setVehicle(vehicle);
 
-	        List<DefectLocation> locations = request.getDefectLocations().stream().map(location -> {
-	            DefectLocation defectLocation = new DefectLocation();
-	            defectLocation.setX(location.getX());
-	            defectLocation.setY(location.getY());
-	            defectLocation.setVehicleDefect(defect);
-	            return defectLocation;
-	        }).collect(Collectors.toList());
+			List<DefectLocation> locations = request.getDefectLocations().stream().map(location -> {
+				DefectLocation defectLocation = new DefectLocation();
+				defectLocation.setX(location.getX());
+				defectLocation.setY(location.getY());
+				defectLocation.setVehicleDefect(defect);
+				return defectLocation;
+			}).collect(Collectors.toList());
 
-	        defect.setLocations(locations);
+			defect.setLocations(locations);
 
-	        vehicleDefectRepository.save(defect);
+			vehicleDefectRepository.save(defect);
 
-	        logger.info("Defect added successfully: defectId={}, vehicleId={}", defect.getId(), vehicleId);
-	    } catch (Exception e) {
-	        logger.error("Failed to add defect for vehicleId={}. Error: {}", vehicleId, e.getMessage());
-	        throw e;
-	    }
+			logger.info("Defect added successfully: defectId={}, vehicleId={}", defect.getId(), vehicleId);
+		} catch (Exception e) {
+			logger.error("Failed to add defect for vehicleId={}. Error: {}", vehicleId, e.getMessage());
+			throw e;
+		}
 	}
 
-//	@Override
-//	public Page<VehicleDefectResponse> getAllDefects(int no, int size, String sortBy, String sortDirection) {
-//		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
-//		Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-//		Page<VehicleDefect> defects = vehicleDefectRepository.findAll(pageable);
-//
-//		List<VehicleDefectResponse> responseList = defects.stream()
-//				.map(defect -> modelMapperService.forResponse().map(defect, VehicleDefectResponse.class))
-//				.collect(Collectors.toList());
-//		return new PageImpl<>(responseList, pageable, defects.getTotalElements());
-//	}
-	
 	@Override
 	public Page<VehicleDefectResponse> getAllDefects(int no, int size, String sortBy, String sortDirection) {
-	    Sort.Direction direction = Sort.Direction.fromString(sortDirection);
-	    Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-	    Page<VehicleDefect> defects = vehicleDefectRepository.findAll(pageable);
+		logger.info("Begin getAllDefects method to Fetch vehicles with pagination - Page: {}, Size: {}, SortBy: {}, SortDirection: {}",
+	            no, size, sortBy, sortDirection);
+		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
+		Pageable pageable = PageRequest.of(no, size, direction, sortBy);
+		Page<VehicleDefect> defects = vehicleDefectRepository.findAll(pageable);
 
-	    List<VehicleDefectResponse> responseList = defects.stream()
-	            .map(defect -> modelMapperService.forResponse().map(defect, VehicleDefectResponse.class))
-	            .collect(Collectors.toList());
+		List<VehicleDefectResponse> responseList = defects.stream()
+				.map(defect -> modelMapperService.forResponse().map(defect, VehicleDefectResponse.class))
+				.collect(Collectors.toList());
 
-	    long totalElements = defects.getTotalElements();
-	    int totalPages = defects.getTotalPages();
+		long totalElements = defects.getTotalElements();
+		int totalPages = defects.getTotalPages();
 
-	    logger.info("Retrieved {} defects. Page {}/{}", totalElements, defects.getNumber() + 1, totalPages);
+		logger.info("Retrieved {} defects. Page {}/{}", totalElements, defects.getNumber() + 1, totalPages);
 
-	    return new PageImpl<>(responseList, pageable, totalElements);
+		return new PageImpl<>(responseList, pageable, totalElements);
 	}
 
-
-//	@Override
-//	public Page<VehicleDefectResponse> getAllDefectsByVehicleId(String vehicleId, int no, int size, String sortBy,
-//			String sortDirection) {
-//		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
-//		Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-//		Page<VehicleDefect> defects = vehicleDefectRepository.findByVehicleId(vehicleId, pageable);
-//
-//		List<VehicleDefectResponse> responseList = defects.stream()
-//				.map(defect -> modelMapperService.forResponse().map(defect, VehicleDefectResponse.class))
-//				.collect(Collectors.toList());
-//
-//		return new PageImpl<>(responseList, pageable, defects.getTotalElements());
-//	}
-	
 	@Override
-	public Page<VehicleDefectResponse> getAllDefectsByVehicleId(String vehicleId, int no, int size, String sortBy, String sortDirection) {
-	    Sort.Direction direction = Sort.Direction.fromString(sortDirection);
-	    Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-	    Page<VehicleDefect> defects = vehicleDefectRepository.findByVehicleId(vehicleId, pageable);
+	public Page<VehicleDefectResponse> getAllDefectsByVehicleId(String vehicleId, int no, int size, String sortBy,
+			String sortDirection) {
+		
+		logger.info("Begin getAllDefectsByVehicleId method to Fetch vehicles with pagination - Page: {}, Size: {}, SortBy: {}, SortDirection: {}",
+	            no, size, sortBy, sortDirection);
+		
+		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
+		Pageable pageable = PageRequest.of(no, size, direction, sortBy);
+		Page<VehicleDefect> defects = vehicleDefectRepository.findByVehicleId(vehicleId, pageable);
 
-	    List<VehicleDefectResponse> responseList = defects.stream()
-	            .map(defect -> modelMapperService.forResponse().map(defect, VehicleDefectResponse.class))
-	            .collect(Collectors.toList());
+		List<VehicleDefectResponse> responseList = defects.stream()
+				.map(defect -> modelMapperService.forResponse().map(defect, VehicleDefectResponse.class))
+				.collect(Collectors.toList());
 
-	    logger.info("Retrieved {} defects for vehicleId: {}, page: {}, size: {}, sortBy: {}, sortDirection: {}",
-	            defects.getTotalElements(), vehicleId, no, size, sortBy, sortDirection);
+		logger.info("Retrieved {} defects for vehicleId: {}, page: {}, size: {}, sortBy: {}, sortDirection: {}",
+				defects.getTotalElements(), vehicleId, no, size, sortBy, sortDirection);
 
-	    return new PageImpl<>(responseList, pageable, defects.getTotalElements());
+		return new PageImpl<>(responseList, pageable, defects.getTotalElements());
 	}
-
-
-//	@Override
-//	@Transactional
-//	public byte[] getImage(String vehicleId) throws IOException {
-//		VehicleDefect vehicleDefect = vehicleDefectRepository.findByVehicle_VehicleId(vehicleId);
-//		byte[] imageData = vehicleDefect.getImage();
-//		List<DefectLocation> defectLocations = vehicleDefect.getLocations();
-//
-//		InputStream inputStream = new ByteArrayInputStream(imageData);
-//		BufferedImage bufferedImage = ImageIO.read(inputStream);
-//
-//		Graphics2D graphics = bufferedImage.createGraphics();
-//		graphics.setColor(Color.WHITE);
-//		int markerSize = 20; // Hata noktalarının işaretleyici boyutu
-//
-//		for (DefectLocation location : defectLocations) {
-//			int x = location.getX();
-//			int y = location.getY();
-//
-//			int rectSize = 40; // Dikdörtgen boyutu
-//			int triangleSize = 20; // Üçgen boyutu
-//
-//			// Dikdörtgen çizimi
-//			graphics.drawRect(x - rectSize / 2, y - rectSize / 2, rectSize, rectSize);
-//
-//			// Üçgen çizimi
-//			int[] xPoints = { x - triangleSize / 2, x, x + triangleSize / 2 };
-//			int[] yPoints = { y + rectSize / 2, y - rectSize / 2, y + rectSize / 2 };
-//			graphics.fillPolygon(xPoints, yPoints, 3);
-//		}
-//
-//		graphics.dispose();
-//
-//		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-//		ImageIO.write(bufferedImage, "png", outputStream);
-//
-//		return outputStream.toByteArray();
-//	}
 
 	@Override
 	@Transactional
 	public byte[] getImage(String vehicleId) throws IOException {
-	    VehicleDefect vehicleDefect = vehicleDefectRepository.findByVehicle_VehicleId(vehicleId);
-	    byte[] imageData = vehicleDefect.getImage();
-	    List<DefectLocation> defectLocations = vehicleDefect.getLocations();
+		
+		logger.info("Begin getImage method to get and mark  vehicle's image with vehicleId: {}",vehicleId);
 
-	    InputStream inputStream = new ByteArrayInputStream(imageData);
-	    BufferedImage bufferedImage = ImageIO.read(inputStream);
+		VehicleDefect vehicleDefect = vehicleDefectRepository.findByVehicle_VehicleId(vehicleId);
+		byte[] imageData = vehicleDefect.getImage();
+		List<DefectLocation> defectLocations = vehicleDefect.getLocations();
 
-	    Graphics2D graphics = bufferedImage.createGraphics();
-	    graphics.setColor(Color.WHITE);
-	    int markerSize = 20; // Hata noktalarının işaretleyici boyutu
+		InputStream inputStream = new ByteArrayInputStream(imageData);
+		BufferedImage bufferedImage = ImageIO.read(inputStream);
 
-	    for (DefectLocation location : defectLocations) {
-	        int x = location.getX();
-	        int y = location.getY();
+		Graphics2D graphics = bufferedImage.createGraphics();
+		graphics.setColor(Color.WHITE);
+		
 
-	        int rectSize = 40; // Dikdörtgen boyutu
-	        int triangleSize = 20; // Üçgen boyutu
+		for (DefectLocation location : defectLocations) {
+			int x = location.getX();
+			int y = location.getY();
 
-	        // Dikdörtgen çizimi
-	        graphics.drawRect(x - rectSize / 2, y - rectSize / 2, rectSize, rectSize);
+			int rectSize = 40; // Dikdörtgen boyutu
+			int triangleSize = 20; // Üçgen boyutu
 
-	        // Üçgen çizimi
-	        int[] xPoints = { x - triangleSize / 2, x, x + triangleSize / 2 };
-	        int[] yPoints = { y + rectSize / 2, y - rectSize / 2, y + rectSize / 2 };
-	        graphics.fillPolygon(xPoints, yPoints, 3);
+			// Dikdörtgen çizimi
+			graphics.drawRect(x - rectSize / 2, y - rectSize / 2, rectSize, rectSize);
 
-	        logger.info("Marked defect location at x: {}, y: {}", x, y);
-	    }
+			// Üçgen çizimi
+			int[] xPoints = { x - triangleSize / 2, x, x + triangleSize / 2 };
+			int[] yPoints = { y + rectSize / 2, y - rectSize / 2, y + rectSize / 2 };
+			graphics.fillPolygon(xPoints, yPoints, 3);
 
-	    graphics.dispose();
+			logger.info("Marked defect location at x: {}, y: {}", x, y);
+		}
 
-	    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-	    ImageIO.write(bufferedImage, "png", outputStream);
+		graphics.dispose();
 
-	    logger.info("Generated defect image for vehicleId: {}", vehicleId);
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		ImageIO.write(bufferedImage, "png", outputStream);
 
-	    return outputStream.toByteArray();
+		logger.info("Generated defect image for vehicleId: {}", vehicleId);
+
+		return outputStream.toByteArray();
 	}
 
-	
-	
-	
 }

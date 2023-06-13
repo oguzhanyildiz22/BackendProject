@@ -29,24 +29,13 @@ public class DefectLocationManager implements DefectLocationService {
 	private ModelMapperService modelMapperService;
 
 	private static final Logger logger = LogManager.getLogger(DefectLocationManager.class);
-	
-	
-
-//	@Override
-//	public Page<DefectLocationResponse> getVehicles(int no, int size, String sortBy, String sortDirection) {
-//		
-//		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
-//	    Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-//	    Page<DefectLocation> locations = defectLocationRepository.findAll(pageable);
-//
-//	    List<DefectLocationResponse> responseList = locations.stream()
-//	    	    .map(defect -> modelMapperService.forResponse().map(defect, DefectLocationResponse.class))
-//	    	    .collect(Collectors.toList());
-//	    return  new PageImpl<>(responseList, pageable, locations.getTotalElements());
-//	}
 
 	@Override
 	public Page<DefectLocationResponse> getVehicles(int no, int size, String sortBy, String sortDirection) {
+		
+		logger.info("Begin getVehicles method to Fetch vehicles with pagination - Page: {}, Size: {}, SortBy: {}, SortDirection: {}",
+	            no, size, sortBy, sortDirection);
+		
 		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
 		Pageable pageable = PageRequest.of(no, size, direction, sortBy);
 		Page<DefectLocation> locations = defectLocationRepository.findAll(pageable);

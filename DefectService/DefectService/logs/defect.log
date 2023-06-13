@@ -1,0 +1,143 @@
+[INFO ] 2023-06-06 09:17:46.163 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.DefectLocationManagerTest]: DefectLocationManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:17:46.568 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.DefectLocationManagerTest
+[INFO ] 2023-06-06 09:17:47.765 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-06 09:17:47.819 [main] DefectLocationManagerTest - Starting DefectLocationManagerTest using Java 19.0.2 with PID 2120 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\DefectService\DefectService)
+[INFO ] 2023-06-06 09:17:47.827 [main] DefectLocationManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-06 09:17:50.013 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-06 09:17:50.233 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 189 ms. Found 3 JPA repository interfaces.
+[INFO ] 2023-06-06 09:17:51.776 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-06 09:17:52.008 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-06 09:17:52.510 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-06 09:17:53.213 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-06 09:17:53.859 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2d6a0766
+[INFO ] 2023-06-06 09:17:53.867 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-06 09:17:53.973 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-06 09:17:57.562 [main] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c614d8c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2023-06-06 09:17:57.856 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-06 09:17:57.896 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-06 09:18:00.137 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-06 09:18:01.261 [main] DefectLocationManagerTest - Started DefectLocationManagerTest in 14.179 seconds (process running for 18.865)
+[INFO ] 2023-06-06 09:18:04.503 [main] DefectLocationManager - Retrieved 2 Defect Location(s) with no: 0, size: 10, sortBy: defectType, sortDirection: asc
+[INFO ] 2023-06-06 09:18:04.681 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.DefectServiceApplicationTests]: DefectServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:18:04.691 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.DefectServiceApplicationTests
+[INFO ] 2023-06-06 09:18:04.760 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.VehicleDefectManagerTest]: VehicleDefectManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:18:04.771 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.VehicleDefectManagerTest
+[INFO ] 2023-06-06 09:18:05.406 [main] VehicleDefectManager - Retrieved 3 defects. Page 1/1
+[INFO ] 2023-06-06 09:18:05.453 [main] VehicleDefectManager - Defect added successfully: defectId=null, vehicleId=123
+[INFO ] 2023-06-06 09:18:05.494 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.VehicleManagerTest]: VehicleManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:18:05.502 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.VehicleManagerTest
+[INFO ] 2023-06-06 09:18:06.259 [main] VehicleManager - Vehicle with ID 12 deleted successfully.
+[INFO ] 2023-06-06 09:18:06.382 [main] VehicleManager - Operator role check passed for authorization header: Bearer token
+[WARN ] 2023-06-06 09:18:06.445 [main] VehicleManager - Vehicle with ID 12 not found. Deletion failed.
+[INFO ] 2023-06-06 09:18:06.475 [main] VehicleManager - Vehicle added with vehicleId: 10
+[ERROR] 2023-06-06 09:18:06.506 [main] VehicleManager - Vehicle with vehicleId 10 already exists.
+[INFO ] 2023-06-06 09:18:06.509 [main] VehicleManager - Vehicle added with vehicleId: 10
+[WARN ] 2023-06-06 09:18:06.530 [main] VehicleManager - Operator role not found for authorization header: Bearer token
+[INFO ] 2023-06-06 09:18:06.644 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-06 09:18:06.659 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-06 09:18:06.718 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-06 11:34:18.943 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.DefectLocationManagerTest]: DefectLocationManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 11:34:19.361 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.DefectLocationManagerTest
+[INFO ] 2023-06-06 11:34:20.637 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-06 11:34:20.700 [main] DefectLocationManagerTest - Starting DefectLocationManagerTest using Java 19.0.2 with PID 13772 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\DefectService\DefectService)
+[INFO ] 2023-06-06 11:34:20.712 [main] DefectLocationManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-06 11:34:23.606 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-06 11:34:23.866 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 226 ms. Found 3 JPA repository interfaces.
+[INFO ] 2023-06-06 11:34:25.412 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-06 11:34:25.672 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-06 11:34:26.266 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-06 11:34:26.961 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-06 11:34:27.674 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b544732
+[INFO ] 2023-06-06 11:34:27.689 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-06 11:34:27.805 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-06 11:34:30.792 [main] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6978a32a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2023-06-06 11:34:31.023 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-06 11:34:31.055 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-06 11:34:33.196 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-06 11:34:34.248 [main] DefectLocationManagerTest - Started DefectLocationManagerTest in 14.342 seconds (process running for 19.024)
+[INFO ] 2023-06-06 11:34:37.073 [main] DefectLocationManager - Retrieved 2 Defect Location(s) with no: 0, size: 10, sortBy: defectType, sortDirection: asc
+[INFO ] 2023-06-06 11:34:37.212 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.DefectServiceApplicationTests]: DefectServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 11:34:37.227 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.DefectServiceApplicationTests
+[INFO ] 2023-06-06 11:34:37.318 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.VehicleDefectManagerTest]: VehicleDefectManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 11:34:37.331 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.VehicleDefectManagerTest
+[INFO ] 2023-06-06 11:34:37.895 [main] VehicleDefectManager - Retrieved 3 defects. Page 1/1
+[INFO ] 2023-06-06 11:34:37.938 [main] VehicleDefectManager - Defect added successfully: defectId=null, vehicleId=123
+[INFO ] 2023-06-06 11:34:37.964 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.VehicleManagerTest]: VehicleManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 11:34:37.975 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.VehicleManagerTest
+[INFO ] 2023-06-06 11:34:38.601 [main] VehicleManager - Vehicle with ID 12 deleted successfully.
+[INFO ] 2023-06-06 11:34:38.679 [main] VehicleManager - Operator role check passed for authorization header: Bearer token
+[WARN ] 2023-06-06 11:34:38.772 [main] VehicleManager - Vehicle with ID 12 not found. Deletion failed.
+[INFO ] 2023-06-06 11:34:38.803 [main] VehicleManager - Vehicle added with vehicleId: 10
+[ERROR] 2023-06-06 11:34:38.828 [main] VehicleManager - Vehicle with vehicleId 10 already exists.
+[INFO ] 2023-06-06 11:34:38.830 [main] VehicleManager - Vehicle added with vehicleId: 10
+[WARN ] 2023-06-06 11:34:38.861 [main] VehicleManager - Operator role not found for authorization header: Bearer token
+[INFO ] 2023-06-06 11:34:38.940 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-06 11:34:38.951 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-06 11:34:38.994 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-06 12:35:35.838 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.VehicleManagerTest]: VehicleManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 12:35:36.205 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.VehicleManagerTest
+[INFO ] 2023-06-06 12:35:37.559 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-06 12:35:37.635 [main] VehicleManagerTest - Starting VehicleManagerTest using Java 19.0.2 with PID 15476 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\DefectService\DefectService)
+[INFO ] 2023-06-06 12:35:37.655 [main] VehicleManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-06 12:35:39.831 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-06 12:35:40.112 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 249 ms. Found 3 JPA repository interfaces.
+[INFO ] 2023-06-06 12:35:41.547 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-06 12:35:41.869 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-06 12:35:42.372 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-06 12:35:43.060 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-06 12:35:43.730 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30cafd13
+[INFO ] 2023-06-06 12:35:43.736 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-06 12:35:43.865 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-06 12:35:47.151 [main] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ff53704] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2023-06-06 12:35:47.410 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-06 12:35:47.451 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-06 12:35:49.551 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-06 12:35:50.650 [main] VehicleManagerTest - Started VehicleManagerTest in 13.894 seconds (process running for 20.099)
+[INFO ] 2023-06-06 12:35:53.866 [main] VehicleManager - Vehicle with ID 12 deleted successfully.
+[INFO ] 2023-06-06 12:35:54.147 [main] VehicleManager - Operator role check passed for authorization header: Bearer token
+[WARN ] 2023-06-06 12:35:54.570 [main] VehicleManager - Vehicle with ID 12 not found. Deletion failed.
+[INFO ] 2023-06-06 12:35:54.615 [main] VehicleManager - Vehicle added with vehicleId: 10
+[ERROR] 2023-06-06 12:35:54.773 [main] VehicleManager - Vehicle with vehicleId 10 already exists.
+[INFO ] 2023-06-06 12:35:54.774 [main] VehicleManager - Vehicle added with vehicleId: 10
+[WARN ] 2023-06-06 12:35:54.948 [main] VehicleManager - Operator role not found for authorization header: Bearer token
+[INFO ] 2023-06-06 12:35:55.122 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-06 12:35:55.136 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-06 12:35:55.229 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-06 12:37:12.129 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.DefectServiceApplicationTests]: DefectServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 12:37:12.888 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.DefectServiceApplicationTests
+[INFO ] 2023-06-06 12:37:15.268 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-06 12:37:15.443 [main] DefectServiceApplicationTests - Starting DefectServiceApplicationTests using Java 19.0.2 with PID 19544 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\DefectService\DefectService)
+[INFO ] 2023-06-06 12:37:15.462 [main] DefectServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-06 12:37:18.716 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-06 12:37:19.055 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 297 ms. Found 3 JPA repository interfaces.
+[INFO ] 2023-06-06 12:37:21.347 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-06 12:37:21.793 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-06 12:37:22.648 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-06 12:37:23.825 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-06 12:37:25.029 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5bfd3d0
+[INFO ] 2023-06-06 12:37:25.044 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-06 12:37:25.267 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-06 12:37:30.412 [main] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6bf1bfec] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2023-06-06 12:37:30.649 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-06 12:37:30.705 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-06 12:37:33.326 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-06 12:37:34.830 [main] DefectServiceApplicationTests - Started DefectServiceApplicationTests in 20.885 seconds (process running for 29.854)
+[INFO ] 2023-06-06 12:37:37.136 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.VehicleDefectManagerTest]: VehicleDefectManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 12:37:37.142 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.VehicleDefectManagerTest
+[INFO ] 2023-06-06 12:37:40.052 [main] VehicleDefectManager - Retrieved 3 defects. Page 1/1
+[INFO ] 2023-06-06 12:37:40.221 [main] VehicleDefectManager - Defect added successfully: defectId=null, vehicleId=123
+[INFO ] 2023-06-06 12:37:40.288 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.DefectLocationManagerTest]: DefectLocationManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 12:37:40.320 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.DefectLocationManagerTest
+[INFO ] 2023-06-06 12:37:40.780 [main] DefectLocationManager - Retrieved 2 Defect Location(s) with no: 0, size: 10, sortBy: defectType, sortDirection: asc
+[INFO ] 2023-06-06 12:37:40.828 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.DefectService.VehicleManagerTest]: VehicleManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 12:37:40.851 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.DefectService.DefectServiceApplication for test class com.microservice.DefectService.VehicleManagerTest
+[INFO ] 2023-06-06 12:37:42.389 [main] VehicleManager - Vehicle with ID 12 deleted successfully.
+[INFO ] 2023-06-06 12:37:42.532 [main] VehicleManager - Operator role check passed for authorization header: Bearer token
+[WARN ] 2023-06-06 12:37:42.634 [main] VehicleManager - Vehicle with ID 12 not found. Deletion failed.
+[INFO ] 2023-06-06 12:37:42.672 [main] VehicleManager - Vehicle added with vehicleId: 10
+[ERROR] 2023-06-06 12:37:42.781 [main] VehicleManager - Vehicle with vehicleId 10 already exists.
+[INFO ] 2023-06-06 12:37:42.783 [main] VehicleManager - Vehicle added with vehicleId: 10
+[WARN ] 2023-06-06 12:37:42.850 [main] VehicleManager - Operator role not found for authorization header: Bearer token
+[INFO ] 2023-06-06 12:37:47.644 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-06 12:37:47.662 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-06 12:37:47.719 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.

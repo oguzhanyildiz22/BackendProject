@@ -12,5 +12,7 @@ public class VehicleResponse {
 	
 	private String vehicleId;
 	
+	private boolean deleted;
+	
 	private List<VehicleDefectResponse> defects = new ArrayList<>();
 }

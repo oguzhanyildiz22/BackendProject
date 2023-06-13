@@ -1,0 +1,37 @@
+[INFO ] 2023-06-06 09:08:27.083 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:08:27.418 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-06 09:08:28.640 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-06 09:08:28.702 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 5220 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-06 09:08:28.713 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-06 09:08:30.742 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-06 09:08:30.949 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 175 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-06 09:08:32.242 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-06 09:08:32.526 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-06 09:08:32.943 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-06 09:08:33.543 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-06 09:08:34.162 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fb6b8fb
+[INFO ] 2023-06-06 09:08:34.167 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-06 09:08:34.301 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-06 09:08:36.800 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-06 09:08:36.829 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-06 09:08:38.847 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-06 09:08:39.806 [main] UserManagerTest - Started UserManagerTest in 11.918 seconds (process running for 16.257)
+[INFO ] 2023-06-06 09:08:43.146 [main] UserManager - Fetching users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-06 09:08:43.157 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-06 09:08:43.256 [main] UserManager - Soft deleting user with ID: 1
+[INFO ] 2023-06-06 09:08:43.258 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-06 09:08:43.303 [main] UserManager - Adding user: testuser
+[INFO ] 2023-06-06 09:08:43.305 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-06 09:08:43.337 [main] UserManager - Getting user by ID: 1
+[INFO ] 2023-06-06 09:08:43.338 [main] UserManager - User found: testuser
+[INFO ] 2023-06-06 09:08:43.366 [main] UserManager - Updating user: testuser
+[INFO ] 2023-06-06 09:08:43.368 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-06 09:08:43.394 [main] UserManager - Adding user: testuser
+[WARN ] 2023-06-06 09:08:43.396 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-06 09:08:43.423 [main] UserManager - Getting user by ID: 1
+[WARN ] 2023-06-06 09:08:43.423 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-06 09:08:43.455 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:08:43.468 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-06 09:08:43.602 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-06 09:08:43.609 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-06 09:08:43.640 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
