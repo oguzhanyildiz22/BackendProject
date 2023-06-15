@@ -24,6 +24,7 @@ import com.microservice.UserService.business.requests.AddUserRequest;
 import com.microservice.UserService.business.requests.UpdateUserRequest;
 import com.microservice.UserService.business.responses.UserResponse;
 
+
 @RestController
 @RequestMapping("api/user")
 public class UserController {
@@ -49,7 +50,7 @@ public class UserController {
 	}
 
 	@PostMapping("/add")
-	public String add(@RequestBody AddUserRequest addUserRequest,
+	public ResponseEntity<String> add(@RequestBody AddUserRequest addUserRequest,
 			@RequestHeader("Authorization") String authorizationHeader) {
 
 		logger.info("Add endpoint called with authorization header: {}", authorizationHeader);
@@ -57,16 +58,16 @@ public class UserController {
 		if (userService.checkRole(authorizationHeader)) {
 			logger.info("User has ADMIN authority. Adding user: {}", addUserRequest);
 			this.userService.addUser(addUserRequest);
-			return "added";
+			return ResponseEntity.ok("User added successfully");
 		} else {
 			logger.warn("User does not have ADMIN authority. User not added.");
-			return "did not add";
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
 		}
 
 	}
 
 	@PutMapping("/update")
-	public String update(@RequestBody UpdateUserRequest updateUserRequest,
+	public ResponseEntity<String> update(@RequestBody UpdateUserRequest updateUserRequest,
 			@RequestHeader("Authorization") String authorizationHeader) {
 
 		logger.info("Update endpoint called with authorization header: {}", authorizationHeader);
@@ -74,16 +75,16 @@ public class UserController {
 		if (userService.checkRole(authorizationHeader)) {
 			logger.info("User has ADMIN authority. Updating user: {}", updateUserRequest);
 			this.userService.updateUser(updateUserRequest);
-			return "user updated";
+			return ResponseEntity.ok("User updated successfully");
 		} else {
 			logger.warn("User does not have ADMIN authority. User not updated.");
-			return "user did not update";
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
 		}
 
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public String softDeleteUserById(@PathVariable("id") int userId,
+	public ResponseEntity<String> softDeleteUserById(@PathVariable("id") int userId,
 			@RequestHeader("Authorization") String authorizationHeader) {
 
 		logger.info("Delete endpoint called with authorization header: {}", authorizationHeader);
@@ -91,10 +92,10 @@ public class UserController {
 		if (userService.checkRole(authorizationHeader)) {
 			logger.info("User has ADMIN authority. Soft deleting user with ID: {}", userId);
 			userService.softDeleteUserById(userId);
-			return "deleted";
+			return ResponseEntity.ok("User deleted successfully");
 		} else {
 			logger.warn("User does not have ADMIN authority. User not deleted.");
-			return "did not delete";
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
 		}
 	}
 

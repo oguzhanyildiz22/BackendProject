@@ -196,7 +196,7 @@ public class UserManager implements UserService {
 	        return false;
 	    } catch (Exception e) {
 	        logger.error("Error occurred while checking user roles: {}", e.getMessage());
-	        throw new RuntimeException("Failed to check user roles");
+	        return false;
 	    }
 	}
 	

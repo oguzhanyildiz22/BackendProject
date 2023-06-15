@@ -24,6 +24,8 @@ import com.microservice.DefectService.business.abstracts.VehicleService;
 import com.microservice.DefectService.business.requests.CreateDefectRequest;
 import com.microservice.DefectService.business.responses.VehicleDefectResponse;
 
+
+
 @RestController
 @RequestMapping("api/defects")
 public class VehicleDefectController {
@@ -53,7 +55,7 @@ public class VehicleDefectController {
 			}
 		}
 
-		logger.warn("Unauthorized action. Defect not added.");
+		logger.warn("User does not have OPERATOR authority. Defect not added.");
 		return new ResponseEntity<String>("Unauthorized action", HttpStatus.UNAUTHORIZED);
 	}
 
@@ -74,7 +76,7 @@ public class VehicleDefectController {
 			return new ResponseEntity<>(vehicleDefectDTOPage, HttpStatus.OK);
 		}
 
-		logger.warn("Unauthorized access to Get All Defects endpoint.");
+		logger.warn("User does not have TEAM_LEADER authority. getAll method was not started.");
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}
 
@@ -95,7 +97,7 @@ public class VehicleDefectController {
 
 			return new ResponseEntity<>(vehicleDefectDTOPage, HttpStatus.OK);
 		}
-		logger.warn("Unauthorized access to Get All Defects endpoint.");
+		logger.warn("User does not have TEAM_LEADER authority. getAll-with-field method was not started.");
 
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}

@@ -43,7 +43,7 @@ public class VehicleController {
 	        return ResponseEntity.ok("The vehicle has been successfully added.");
 	    } else {
 	        logger.warn("User does not have OPERATOR role. Access unauthorized.");
-	        return new ResponseEntity<>("Failed to add vehicle", HttpStatus.BAD_REQUEST);
+	        return new ResponseEntity<String>("Unauthorized action", HttpStatus.UNAUTHORIZED);
 	    }
 	}
 	
@@ -71,7 +71,7 @@ public class VehicleController {
 	
 	
 	@DeleteMapping("/{vehicleId}")
-	public String delete(@PathVariable String vehicleId,
+	public ResponseEntity<String> delete(@PathVariable String vehicleId,
 	        @RequestHeader("Authorization") String authorizationHeader) {
 	    
 	    logger.info("Delete endpoint called with vehicleId: {} and authorization header: {}", vehicleId, authorizationHeader);
@@ -80,10 +80,10 @@ public class VehicleController {
 	        logger.info("User has OPERATOR role. Deleting vehicle with vehicleId: {}", vehicleId);
 	        
 	        vehicleService.delete(vehicleId);
-	        return "Vehicle deleted successfully";
+	        return new ResponseEntity<>("deleted successfully", HttpStatus.OK);
 	    } else {
 	        logger.warn("User does not have OPERATOR role. Vehicle not deleted.");
-	        return "Unauthorized action";
+	        return new ResponseEntity<String>("Unauthorized action", HttpStatus.UNAUTHORIZED);
 	    }
 	}
 }

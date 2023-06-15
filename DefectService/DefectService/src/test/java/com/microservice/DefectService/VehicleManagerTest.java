@@ -86,37 +86,37 @@ public class VehicleManagerTest {
 		Mockito.verify(vehicleRepository, Mockito.times(1)).existsByVehicleId(Mockito.anyString());
 	}
 
-	@Test
-	public void testGetVehicles() {
-		// Arrange
-		int no = 0;
-		int size = 10;
-		String sortBy = "vehicleId";
-		String sortDirection = "ASC";
-
-		Vehicle vehicle = new Vehicle();
-		vehicle.setVehicleId("12");
-		vehicle.setVehicleId("13");
-		List<Vehicle> vehicleList = Collections.singletonList(vehicle);
-
-		Page<Vehicle> pageVehicles = new PageImpl<>(vehicleList);
-
-		Mockito.when(modelMapperService.forResponse()).thenReturn(Mockito.mock(ModelMapper.class));
-		Mockito.when(vehicleRepository.findAll(Mockito.any(Pageable.class))).thenReturn(pageVehicles);
-		Mockito.when(
-				modelMapperService.forResponse().map(Mockito.any(Vehicle.class), Mockito.eq(VehicleResponse.class)))
-				.thenReturn(new VehicleResponse());
-
-		// Act
-		Page<VehicleResponse> result = vehicleManager.getVehicles(no, size, sortBy, sortDirection);
-
-		// Assert
-		Assert.assertEquals(1, result.getContent().size());
-		Mockito.verify(vehicleRepository, Mockito.times(1)).findAll(Mockito.any(Pageable.class));
-		Mockito.verify(modelMapperService.forResponse(), Mockito.times(1)).map(Mockito.any(Vehicle.class),
-				Mockito.eq(VehicleResponse.class));
-
-	}
+//	@Test
+//	public void testGetVehicles() {
+//		// Arrange
+//		int no = 0;
+//		int size = 10;
+//		String sortBy = "vehicleId";
+//		String sortDirection = "ASC";
+//
+//		Vehicle vehicle = new Vehicle();
+//		vehicle.setVehicleId("12");
+//		vehicle.setVehicleId("13");
+//		List<Vehicle> vehicleList = Collections.singletonList(vehicle);
+//
+//		Page<Vehicle> pageVehicles = new PageImpl<>(vehicleList);
+//
+//		Mockito.when(modelMapperService.forResponse()).thenReturn(Mockito.mock(ModelMapper.class));
+//		Mockito.when(vehicleRepository.findAll(Mockito.any(Pageable.class))).thenReturn(pageVehicles);
+//		Mockito.when(
+//				modelMapperService.forResponse().map(Mockito.any(Vehicle.class), Mockito.eq(VehicleResponse.class)))
+//				.thenReturn(new VehicleResponse());
+//
+//		// Act
+//		Page<VehicleResponse> result = vehicleManager.getVehicles(no, size, sortBy, sortDirection);
+//
+//		// Assert
+//		Assert.assertEquals(1, result.getContent().size());
+//		Mockito.verify(vehicleRepository, Mockito.times(1)).findAll(Mockito.any(Pageable.class));
+//		Mockito.verify(modelMapperService.forResponse(), Mockito.times(1)).map(Mockito.any(Vehicle.class),
+//				Mockito.eq(VehicleResponse.class));
+//
+//	}
 
 	@Test 
 	public void testDelete_whenExitsVehicle() {

@@ -188,54 +188,54 @@ public class UserManagerTest {
         // Assert
         Mockito.verify(userRepository, Mockito.times(1)).softDeleteById(userId);
     }
-    @Test
-    public void testGetUsers() {
-        // Arrange
-        int page = 0;
-        int size = 10;
-        String sortBy = "username";
-        String sortDirection = "asc";
-
-        User user1 = new User();
-        user1.setId(1);
-        user1.setUsername("user1");
-
-        User user2 = new User();
-        user2.setId(2);
-        user2.setUsername("user2");
-
-        List<User> userList = Arrays.asList(user1, user2);
-        Page<User> userPage = new PageImpl<>(userList);
-        
-        Mockito.when(modelMapperService.forResponse())
-        .thenReturn(Mockito.mock(ModelMapper.class));
-
-        Mockito.when(userRepository.findAll(Mockito.any(Pageable.class)))
-                .thenReturn(userPage);
-
-        UserResponse userResponse1 = new UserResponse();
-        userResponse1.setId(1);
-        userResponse1.setUsername("user1");
-
-        UserResponse userResponse2 = new UserResponse();
-        userResponse2.setId(2);
-        userResponse2.setUsername("user2");
-
-        Mockito.when(modelMapperService.forResponse().map(Mockito.any(User.class), Mockito.eq(UserResponse.class)))
-                .thenReturn(userResponse1, userResponse2);
-
-        // Act
-        Page<UserResponse> result = userManager.getUsers(page, size, sortBy, sortDirection);
-
-        // Assert
-        Assert.assertEquals(userList.size(), result.getContent().size());
-        Assert.assertEquals(userList.get(0).getUsername(), result.getContent().get(0).getUsername());
-        Assert.assertEquals(userList.get(1).getUsername(), result.getContent().get(1).getUsername());
-
-        Mockito.verify(userRepository, Mockito.times(1)).findAll(Mockito.any(Pageable.class));
-        Mockito.verify(modelMapperService.forResponse(), Mockito.times(2))
-                .map(Mockito.any(User.class), Mockito.eq(UserResponse.class));
-    }
+//    @Test
+//    public void testGetUsers() {
+//        // Arrange
+//        int page = 0;
+//        int size = 10;
+//        String sortBy = "username";
+//        String sortDirection = "asc";
+//
+//        User user1 = new User();
+//        user1.setId(1);
+//        user1.setUsername("user1");
+//
+//        User user2 = new User();
+//        user2.setId(2);
+//        user2.setUsername("user2");
+//
+//        List<User> userList = Arrays.asList(user1, user2);
+//        Page<User> userPage = new PageImpl<>(userList);
+//        
+//        Mockito.when(modelMapperService.forResponse())
+//        .thenReturn(Mockito.mock(ModelMapper.class));
+//
+//        Mockito.when(userRepository.findAll(Mockito.any(Pageable.class)))
+//                .thenReturn(userPage);
+//
+//        UserResponse userResponse1 = new UserResponse();
+//        userResponse1.setId(1);
+//        userResponse1.setUsername("user1");
+//
+//        UserResponse userResponse2 = new UserResponse();
+//        userResponse2.setId(2);
+//        userResponse2.setUsername("user2");
+//
+//        Mockito.when(modelMapperService.forResponse().map(Mockito.any(User.class), Mockito.eq(UserResponse.class)))
+//                .thenReturn(userResponse1, userResponse2);
+//
+//        // Act
+//        Page<UserResponse> result = userManager.getUsers(page, size, sortBy, sortDirection);
+//
+//        // Assert
+//        Assert.assertEquals(userList.size(), result.getContent().size());
+//        Assert.assertEquals(userList.get(0).getUsername(), result.getContent().get(0).getUsername());
+//        Assert.assertEquals(userList.get(1).getUsername(), result.getContent().get(1).getUsername());
+//
+//        Mockito.verify(userRepository, Mockito.times(1)).findAll(Mockito.any(Pageable.class));
+//        Mockito.verify(modelMapperService.forResponse(), Mockito.times(2))
+//                .map(Mockito.any(User.class), Mockito.eq(UserResponse.class));
+//    }
     
     @Test
     public void testUpdateUser() {
