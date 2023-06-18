@@ -1,0 +1,720 @@
+[INFO ] 2023-06-06 09:08:27.083 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:08:27.418 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-06 09:08:28.640 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-06 09:08:28.702 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 5220 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-06 09:08:28.713 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-06 09:08:30.742 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-06 09:08:30.949 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 175 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-06 09:08:32.242 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-06 09:08:32.526 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-06 09:08:32.943 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-06 09:08:33.543 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-06 09:08:34.162 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fb6b8fb
+[INFO ] 2023-06-06 09:08:34.167 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-06 09:08:34.301 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-06 09:08:36.800 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-06 09:08:36.829 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-06 09:08:38.847 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-06 09:08:39.806 [main] UserManagerTest - Started UserManagerTest in 11.918 seconds (process running for 16.257)
+[INFO ] 2023-06-06 09:08:43.146 [main] UserManager - Fetching users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-06 09:08:43.157 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-06 09:08:43.256 [main] UserManager - Soft deleting user with ID: 1
+[INFO ] 2023-06-06 09:08:43.258 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-06 09:08:43.303 [main] UserManager - Adding user: testuser
+[INFO ] 2023-06-06 09:08:43.305 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-06 09:08:43.337 [main] UserManager - Getting user by ID: 1
+[INFO ] 2023-06-06 09:08:43.338 [main] UserManager - User found: testuser
+[INFO ] 2023-06-06 09:08:43.366 [main] UserManager - Updating user: testuser
+[INFO ] 2023-06-06 09:08:43.368 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-06 09:08:43.394 [main] UserManager - Adding user: testuser
+[WARN ] 2023-06-06 09:08:43.396 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-06 09:08:43.423 [main] UserManager - Getting user by ID: 1
+[WARN ] 2023-06-06 09:08:43.423 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-06 09:08:43.455 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-06 09:08:43.468 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-06 09:08:43.602 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-06 09:08:43.609 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-06 09:08:43.640 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-13 12:52:54.540 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 12:52:54.919 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-13 12:52:56.122 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-13 12:52:56.191 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 17644 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-13 12:52:56.211 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-13 12:52:58.509 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-13 12:52:58.752 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 198 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-13 12:53:00.088 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-13 12:53:00.313 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-13 12:53:00.766 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-13 12:53:01.429 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-13 12:53:02.047 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6eeb29c0
+[INFO ] 2023-06-13 12:53:02.053 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-13 12:53:02.174 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-13 12:53:04.872 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-13 12:53:04.900 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-13 12:53:07.474 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-13 12:53:08.450 [main] UserManagerTest - Started UserManagerTest in 13.082 seconds (process running for 17.325)
+[INFO ] 2023-06-13 12:53:11.937 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-13 12:53:11.944 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-13 12:53:12.303 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-13 12:53:12.306 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-13 12:53:12.352 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-13 12:53:12.353 [main] UserManager - User found: testuser
+[INFO ] 2023-06-13 12:53:12.405 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-13 12:53:12.408 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-13 12:53:12.456 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-13 12:53:12.459 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-13 12:53:12.497 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-13 12:53:12.498 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-13 12:53:12.535 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 12:53:12.548 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-13 12:53:12.798 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-13 12:53:12.816 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-13 12:53:12.848 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-13 13:07:07.592 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 13:07:08.024 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-13 13:07:09.198 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-13 13:07:09.266 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 17764 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-13 13:07:09.281 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-13 13:07:11.303 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-13 13:07:11.511 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 171 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-13 13:07:12.887 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-13 13:07:13.175 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-13 13:07:13.615 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-13 13:07:14.260 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-13 13:07:14.974 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@274bae2c
+[INFO ] 2023-06-13 13:07:14.983 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-13 13:07:15.131 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-13 13:07:17.735 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-13 13:07:17.764 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-13 13:07:20.188 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-13 13:07:21.271 [main] UserManagerTest - Started UserManagerTest in 12.799 seconds (process running for 17.27)
+[INFO ] 2023-06-13 13:07:24.584 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-13 13:07:24.588 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-13 13:07:24.917 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-13 13:07:24.923 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-13 13:07:24.988 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-13 13:07:24.990 [main] UserManager - User found: testuser
+[INFO ] 2023-06-13 13:07:25.036 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-13 13:07:25.042 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-13 13:07:25.092 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-13 13:07:25.096 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-13 13:07:25.126 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-13 13:07:25.128 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-13 13:07:25.162 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 13:07:25.183 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-13 13:07:25.367 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-13 13:07:25.382 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-13 13:07:25.417 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-13 20:28:16.727 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 20:28:17.070 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-13 20:28:18.293 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-13 20:28:18.357 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 21844 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-13 20:28:18.367 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-13 20:28:20.349 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-13 20:28:20.553 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 170 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-13 20:28:21.748 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-13 20:28:21.990 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-13 20:28:22.435 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-13 20:28:23.029 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-13 20:28:23.681 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47eaf55c
+[INFO ] 2023-06-13 20:28:23.686 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-13 20:28:23.806 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-13 20:28:26.336 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-13 20:28:26.370 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-13 20:28:28.780 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-13 20:28:29.820 [main] UserManagerTest - Started UserManagerTest in 12.287 seconds (process running for 16.524)
+[INFO ] 2023-06-13 20:28:32.870 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-13 20:28:32.872 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-13 20:28:33.139 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-13 20:28:33.143 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-13 20:28:33.197 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-13 20:28:33.198 [main] UserManager - User found: testuser
+[INFO ] 2023-06-13 20:28:33.239 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-13 20:28:33.245 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-13 20:28:33.285 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-13 20:28:33.287 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-13 20:28:33.317 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-13 20:28:33.318 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-13 20:28:33.344 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 20:28:33.355 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-13 20:28:33.514 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-13 20:28:33.525 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-13 20:28:33.553 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-13 20:42:11.685 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 20:42:12.027 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-13 20:42:13.252 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-13 20:42:13.316 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 6472 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-13 20:42:13.328 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-13 20:42:15.219 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-13 20:42:15.433 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 182 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-13 20:42:16.837 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-13 20:42:17.118 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-13 20:42:17.633 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-13 20:42:18.271 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-13 20:42:18.935 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5238896f
+[INFO ] 2023-06-13 20:42:18.941 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-13 20:42:19.055 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-13 20:42:21.916 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-13 20:42:21.942 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-13 20:42:24.492 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-13 20:42:25.499 [main] UserManagerTest - Started UserManagerTest in 13.004 seconds (process running for 17.243)
+[INFO ] 2023-06-13 20:42:28.956 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-13 20:42:28.960 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-13 20:42:29.309 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-13 20:42:29.311 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-13 20:42:29.364 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-13 20:42:29.365 [main] UserManager - User found: testuser
+[INFO ] 2023-06-13 20:42:29.414 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-13 20:42:29.419 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-13 20:42:29.460 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-13 20:42:29.461 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-13 20:42:29.490 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-13 20:42:29.491 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-13 20:42:29.531 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 20:42:29.544 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-13 20:42:29.637 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-13 20:42:29.645 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-13 20:42:29.667 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-13 23:59:47.111 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-13 23:59:47.459 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-13 23:59:48.671 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-13 23:59:48.741 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 8340 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-13 23:59:48.758 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-13 23:59:50.725 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-13 23:59:50.927 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 171 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-13 23:59:52.234 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-13 23:59:52.466 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-13 23:59:52.931 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-13 23:59:53.494 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-13 23:59:54.146 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77cddc0c
+[INFO ] 2023-06-13 23:59:54.154 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-13 23:59:54.262 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-13 23:59:57.020 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-13 23:59:57.045 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-13 23:59:59.140 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-14 00:00:00.143 [main] UserManagerTest - Started UserManagerTest in 12.238 seconds (process running for 16.59)
+[INFO ] 2023-06-14 00:00:03.248 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-14 00:00:03.252 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-14 00:00:03.512 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-14 00:00:03.515 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-14 00:00:03.547 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-14 00:00:03.548 [main] UserManager - User found: testuser
+[INFO ] 2023-06-14 00:00:03.584 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-14 00:00:03.586 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-14 00:00:03.622 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-14 00:00:03.624 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-14 00:00:03.645 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-14 00:00:03.646 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-14 00:00:03.671 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-14 00:00:03.679 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-14 00:00:03.773 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-14 00:00:03.780 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-14 00:00:03.804 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-14 00:16:31.984 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-14 00:16:32.435 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-14 00:16:33.599 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-14 00:16:33.649 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 18332 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-14 00:16:33.660 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-14 00:16:35.818 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-14 00:16:36.028 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 176 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-14 00:16:37.382 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-14 00:16:37.649 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-14 00:16:38.155 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-14 00:16:38.748 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-14 00:16:39.496 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@44b9c7c4
+[INFO ] 2023-06-14 00:16:39.510 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-14 00:16:39.637 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-14 00:16:42.714 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-14 00:16:42.744 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-14 00:16:45.461 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-14 00:16:46.585 [main] UserManagerTest - Started UserManagerTest in 13.693 seconds (process running for 18.912)
+[INFO ] 2023-06-14 00:16:50.014 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-14 00:16:50.018 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-14 00:16:50.320 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-14 00:16:50.322 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-14 00:16:50.360 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-14 00:16:50.361 [main] UserManager - User found: testuser
+[INFO ] 2023-06-14 00:16:50.397 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-14 00:16:50.399 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-14 00:16:50.434 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-14 00:16:50.436 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-14 00:16:50.463 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-14 00:16:50.464 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-14 00:16:50.493 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-14 00:16:50.504 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-14 00:16:50.596 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-14 00:16:50.606 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-14 00:16:50.631 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:37:00.525 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:37:00.753 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:37:01.512 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:37:01.555 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 21088 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:37:01.565 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:37:02.867 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:37:03.023 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:37:03.906 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:37:04.027 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:37:04.307 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:37:04.699 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:37:05.072 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12f9f896
+[INFO ] 2023-06-18 00:37:05.077 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:37:05.151 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:37:06.782 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:37:06.800 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:37:08.404 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:37:09.142 [main] UserManagerTest - Started UserManagerTest in 8.143 seconds (process running for 11.14)
+[INFO ] 2023-06-18 00:37:11.831 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:37:11.843 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:37:11.941 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:37:11.942 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:37:11.971 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:37:11.972 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:37:12.004 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:37:12.005 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:37:12.036 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:37:12.037 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:37:12.066 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:37:12.071 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:37:12.094 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:37:12.095 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:37:12.131 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:37:12.138 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:37:12.168 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:39:16.222 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:39:16.475 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:39:17.533 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:39:17.580 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 9884 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:39:17.587 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:39:19.310 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:39:19.489 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:39:20.669 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:39:20.838 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:39:21.274 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:39:21.831 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:39:22.410 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2499b971
+[INFO ] 2023-06-18 00:39:22.416 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:39:22.498 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:39:24.765 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:39:24.788 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:39:26.989 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:39:27.858 [main] UserManagerTest - Started UserManagerTest in 11.032 seconds (process running for 14.828)
+[INFO ] 2023-06-18 00:39:30.861 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:39:30.876 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:39:31.183 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:39:31.192 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:39:31.226 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:39:31.228 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:39:31.268 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:39:31.271 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:39:31.304 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:39:31.305 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:39:31.336 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:39:31.341 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:39:31.373 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:39:31.375 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:39:31.401 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:39:31.403 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:39:31.426 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:39:31.427 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:39:31.464 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:39:31.474 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:39:31.497 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:42:05.340 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:42:05.683 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:42:06.737 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:42:06.794 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 11472 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:42:06.802 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:42:08.574 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:42:08.799 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 194 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:42:10.066 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:42:10.246 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:42:10.620 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:42:11.201 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:42:11.884 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@699e0bf0
+[INFO ] 2023-06-18 00:42:11.892 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:42:11.995 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:42:14.460 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:42:14.484 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:42:17.229 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:42:18.324 [main] UserManagerTest - Started UserManagerTest in 12.272 seconds (process running for 16.061)
+[INFO ] 2023-06-18 00:42:21.954 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:42:21.969 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:42:22.384 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:42:22.396 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:42:22.444 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:42:22.445 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:42:22.483 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:42:22.485 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:42:22.520 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:42:22.521 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:42:22.554 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:42:22.556 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:42:22.582 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:42:22.584 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:42:22.619 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:42:22.620 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:42:22.644 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:42:22.648 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:42:22.684 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:42:22.685 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:42:22.729 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:42:22.742 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:42:22.773 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:44:12.476 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:44:12.820 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:44:14.039 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:44:14.115 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 9008 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:44:14.124 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:44:15.970 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:44:16.149 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 157 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:44:17.312 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:44:17.568 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:44:18.004 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:44:18.590 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:44:19.147 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@28831d69
+[INFO ] 2023-06-18 00:44:19.154 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:44:19.287 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:44:21.958 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:44:21.987 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:44:24.621 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:44:25.685 [main] UserManagerTest - Started UserManagerTest in 12.401 seconds (process running for 16.529)
+[INFO ] 2023-06-18 00:44:29.052 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:44:29.066 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:44:29.433 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:44:29.443 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:44:29.493 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:44:29.495 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:44:29.546 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:44:29.548 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:44:29.581 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:44:29.583 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:44:29.637 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:44:29.640 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:44:29.679 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:44:29.681 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:44:29.714 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:44:29.715 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:44:29.743 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:44:29.744 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:44:29.771 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:44:29.774 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:44:29.797 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:44:29.798 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:44:29.840 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:44:29.850 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:44:29.871 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:46:02.937 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:46:03.187 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:46:04.202 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:46:04.257 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 12632 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:46:04.265 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:46:06.058 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:46:06.259 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 176 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:46:07.414 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:46:07.593 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:46:08.033 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:46:08.575 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:46:09.109 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b475663
+[INFO ] 2023-06-18 00:46:09.109 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:46:09.215 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:46:11.646 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:46:11.678 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:46:13.910 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:46:14.797 [main] UserManagerTest - Started UserManagerTest in 11.256 seconds (process running for 15.181)
+[INFO ] 2023-06-18 00:46:18.422 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:46:18.438 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:46:18.792 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:46:18.792 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:46:18.840 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:46:18.840 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:46:18.896 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:46:18.896 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:46:18.936 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:46:18.936 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:46:19.024 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:46:19.032 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:46:19.089 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:46:19.089 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:46:19.129 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:46:19.129 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:46:19.169 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:46:19.178 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:46:19.209 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:46:19.217 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:46:19.249 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:46:19.249 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:46:19.305 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:46:19.321 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:46:19.361 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:47:22.204 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:47:22.472 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:47:23.505 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:47:23.558 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 2476 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:47:23.565 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:47:25.255 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:47:25.437 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 153 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:47:26.556 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:47:26.756 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:47:27.135 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:47:27.644 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:47:28.160 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@171aa66
+[INFO ] 2023-06-18 00:47:28.166 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:47:28.253 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:47:30.535 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:47:30.562 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:47:32.714 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:47:33.623 [main] UserManagerTest - Started UserManagerTest in 10.797 seconds (process running for 14.73)
+[INFO ] 2023-06-18 00:47:36.828 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:47:36.841 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:47:37.090 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:47:37.095 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:47:37.146 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:47:37.147 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:47:37.189 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:47:37.191 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:47:37.222 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:47:37.223 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:47:37.256 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:47:37.259 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:47:37.292 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:47:37.294 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:47:37.320 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:47:37.321 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:47:37.345 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:47:37.346 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:47:37.371 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:47:37.372 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:47:37.393 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:47:37.394 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:47:37.428 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:47:37.437 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:47:37.459 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:48:17.236 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:48:17.526 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:48:18.528 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:48:18.582 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 4172 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:48:18.590 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:48:20.430 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:48:20.612 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 155 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:48:21.767 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:48:21.944 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:48:22.342 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:48:22.944 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:48:23.462 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12f9f896
+[INFO ] 2023-06-18 00:48:23.468 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:48:23.554 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:48:25.839 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:48:25.862 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:48:27.887 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:48:28.765 [main] UserManagerTest - Started UserManagerTest in 10.877 seconds (process running for 14.64)
+[INFO ] 2023-06-18 00:48:32.307 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:48:32.315 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:48:32.452 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:48:32.453 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:48:32.501 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:48:32.503 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:48:32.537 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:48:32.538 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:48:32.569 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:48:32.572 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:48:32.603 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:48:32.604 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:48:32.636 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:48:32.638 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:48:32.667 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:48:32.669 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:48:32.697 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:48:32.698 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:48:32.725 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:48:32.727 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:48:32.746 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:48:32.748 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:48:32.770 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:48:32.771 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:48:32.805 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:48:32.814 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:48:32.846 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:49:36.956 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:49:37.215 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:49:38.207 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:49:38.265 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 12336 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:49:38.275 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:49:40.044 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:49:40.205 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:49:41.348 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:49:41.509 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:49:41.890 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:49:42.362 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:49:42.817 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3335afcf
+[INFO ] 2023-06-18 00:49:42.823 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:49:42.932 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:49:45.188 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:49:45.210 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:49:47.446 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:49:48.389 [main] UserManagerTest - Started UserManagerTest in 10.837 seconds (process running for 14.572)
+[INFO ] 2023-06-18 00:49:51.869 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:49:51.881 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:49:52.018 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:49:52.020 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:49:52.065 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:49:52.067 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:49:52.099 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:49:52.101 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:49:52.136 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:49:52.138 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:49:52.172 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:49:52.173 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:49:52.200 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:49:52.202 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:49:52.248 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[ERROR] 2023-06-18 00:49:52.250 [main] UserManager - Error occurred while fetching users: Failed to fetch users
+[INFO ] 2023-06-18 00:49:52.277 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:49:52.279 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:49:52.308 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:49:52.309 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:49:52.328 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:49:52.329 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:49:52.349 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:49:52.351 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:49:52.370 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:49:52.372 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:49:52.407 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:49:52.418 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:49:52.454 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:54:48.452 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:54:48.718 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:54:49.689 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:54:49.735 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 12080 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:54:49.742 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:54:51.381 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:54:51.551 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 147 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:54:52.672 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:54:52.890 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:54:53.266 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:54:53.786 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:54:54.310 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@171aa66
+[INFO ] 2023-06-18 00:54:54.316 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:54:54.417 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:54:56.774 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:54:56.801 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:54:58.983 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:54:59.909 [main] UserManagerTest - Started UserManagerTest in 10.87 seconds (process running for 14.591)
+[INFO ] 2023-06-18 00:55:03.069 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:55:03.078 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:55:03.227 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:55:03.259 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:55:03.309 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:55:03.312 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:55:03.349 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:55:03.351 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:55:03.388 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:55:03.391 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:55:03.443 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[ERROR] 2023-06-18 00:55:03.445 [main] UserManager - Error occurred while fetching users: Failed to fetch users
+[INFO ] 2023-06-18 00:55:03.472 [main] UserManager - Begin updateUser method to update user: testuser
+[WARN ] 2023-06-18 00:55:03.475 [main] UserManager - Invalid role: ROLE_ADMIN
+[INFO ] 2023-06-18 00:55:03.518 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:55:03.519 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:55:03.550 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:55:03.551 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:55:03.570 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:55:03.571 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:55:03.593 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:55:03.595 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:55:03.614 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:55:03.616 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:55:03.654 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:55:03.664 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:55:03.696 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:56:09.659 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:56:09.916 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:56:10.905 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:56:10.952 [main] UserManagerTest - Starting UserManagerTest using Java 19.0.2 with PID 18268 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:56:10.959 [main] UserManagerTest - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:56:12.588 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:56:12.747 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:56:13.977 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:56:14.156 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:56:14.528 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:56:15.055 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:56:15.594 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b24ddd7
+[INFO ] 2023-06-18 00:56:15.599 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:56:15.684 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:56:17.904 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:56:17.928 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:56:20.129 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:56:20.983 [main] UserManagerTest - Started UserManagerTest in 10.722 seconds (process running for 14.445)
+[INFO ] 2023-06-18 00:56:24.104 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:56:24.115 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:56:24.276 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:56:24.278 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:56:24.324 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:56:24.327 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:56:24.363 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:56:24.364 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:56:24.396 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:56:24.399 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:56:24.453 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[ERROR] 2023-06-18 00:56:24.455 [main] UserManager - Error occurred while fetching users: Failed to fetch users
+[INFO ] 2023-06-18 00:56:24.484 [main] UserManager - Begin updateUser method to update user: testuser
+[ERROR] 2023-06-18 00:56:24.486 [main] UserManager - Error updating user: Error updating user
+[INFO ] 2023-06-18 00:56:24.513 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:56:24.515 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:56:24.539 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:56:24.540 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:56:24.558 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:56:24.559 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:56:24.579 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:56:24.581 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:56:24.602 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:56:24.602 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:56:24.635 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:56:24.644 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:56:24.673 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-06-18 00:56:42.738 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserServiceApplicationTests]: UserServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:56:43.199 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserServiceApplicationTests
+[INFO ] 2023-06-18 00:56:44.992 [background-preinit] Version - HV000001: Hibernate Validator 8.0.0.Final
+[INFO ] 2023-06-18 00:56:45.121 [main] UserServiceApplicationTests - Starting UserServiceApplicationTests using Java 19.0.2 with PID 4972 (started by oguzyldz in C:\Users\oguzy\Desktop\BackEnd Project\UserService\UserService)
+[INFO ] 2023-06-18 00:56:45.140 [main] UserServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-18 00:56:47.479 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-06-18 00:56:47.708 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 193 ms. Found 2 JPA repository interfaces.
+[INFO ] 2023-06-18 00:56:49.370 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-06-18 00:56:49.627 [main] Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[WARN ] 2023-06-18 00:56:50.306 [main] deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+[INFO ] 2023-06-18 00:56:51.134 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-06-18 00:56:51.944 [main] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35ab67d4
+[INFO ] 2023-06-18 00:56:51.953 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-06-18 00:56:52.103 [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2023-06-18 00:56:55.809 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-06-18 00:56:55.842 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2023-06-18 00:56:58.707 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2023-06-18 00:57:00.078 [main] UserServiceApplicationTests - Started UserServiceApplicationTests in 16.132 seconds (process running for 22.745)
+[INFO ] 2023-06-18 00:57:01.532 [main] AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.UserService.UserManagerTest]: UserManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO ] 2023-06-18 00:57:01.541 [main] SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.UserService.UserServiceApplication for test class com.microservice.UserService.UserManagerTest
+[INFO ] 2023-06-18 00:57:04.334 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[INFO ] 2023-06-18 00:57:04.345 [main] UserManager - Fetched users successfully
+[INFO ] 2023-06-18 00:57:04.484 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:57:04.486 [main] UserManager - User does not have the role 'ADMIN'
+[INFO ] 2023-06-18 00:57:04.528 [main] UserManager - Begign addUser method to add user: testuser
+[INFO ] 2023-06-18 00:57:04.531 [main] UserManager - User created successfully: testuser
+[INFO ] 2023-06-18 00:57:04.570 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[INFO ] 2023-06-18 00:57:04.572 [main] UserManager - User found: testuser
+[INFO ] 2023-06-18 00:57:04.618 [main] UserManager - Begin updateUser method to update user: testuser
+[INFO ] 2023-06-18 00:57:04.621 [main] UserManager - User updated successfully: testuser
+[INFO ] 2023-06-18 00:57:04.686 [main] UserManager - Begin getUsers Method to Fetch users with pagination - Page: 0, Size: 10, SortBy: username, SortDirection: asc
+[ERROR] 2023-06-18 00:57:04.689 [main] UserManager - Error occurred while fetching users: Failed to fetch users
+[INFO ] 2023-06-18 00:57:04.720 [main] UserManager - Begin updateUser method to update user: testuser
+[ERROR] 2023-06-18 00:57:04.723 [main] UserManager - Error updating user: Error updating user
+[INFO ] 2023-06-18 00:57:04.757 [main] UserManager - Begign addUser method to add user: testuser
+[WARN ] 2023-06-18 00:57:04.759 [main] UserManager - Invalid role: ROLE_INVALID
+[INFO ] 2023-06-18 00:57:04.792 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[INFO ] 2023-06-18 00:57:04.793 [main] UserManager - User soft deleted successfully
+[INFO ] 2023-06-18 00:57:04.825 [main] UserManager - Begin delete method to soft delete user with ID: 1
+[ERROR] 2023-06-18 00:57:04.827 [main] UserManager - Error occurred while soft deleting user: User not found
+[INFO ] 2023-06-18 00:57:04.854 [main] UserManager - Begin checkRole Method to Check user roles with authorization header: Bearer token
+[INFO ] 2023-06-18 00:57:04.856 [main] UserManager - User has the role 'ADMIN'
+[INFO ] 2023-06-18 00:57:04.882 [main] UserManager - Begin getUserById Method to get user by ID: 1
+[WARN ] 2023-06-18 00:57:04.883 [main] UserManager - User not found with ID: 1
+[INFO ] 2023-06-18 00:57:08.058 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-06-18 00:57:08.076 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-06-18 00:57:08.121 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
