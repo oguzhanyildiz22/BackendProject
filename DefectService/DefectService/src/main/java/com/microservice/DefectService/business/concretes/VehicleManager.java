@@ -78,6 +78,7 @@ public class VehicleManager implements VehicleService {
 		return exists;
 	}
 
+	
 	@Override
 	public Page<VehicleResponse> getVehicles(int no, int size, String sortBy, String sortDirection) {
 		

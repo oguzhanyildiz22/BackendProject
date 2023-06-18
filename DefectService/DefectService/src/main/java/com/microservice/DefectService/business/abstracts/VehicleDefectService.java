@@ -31,19 +31,6 @@ public interface VehicleDefectService {
 	 */
 	Page<VehicleDefectResponse> getAllDefects(int no, int size, String sortBy, String sortDirection);
 
-	/**
-	 * Retrieves a paginated list of defects for a specific vehicle.
-	 *
-	 * @param vehicleId     The ID of the vehicle for which to retrieve the defects.
-	 * @param no            The page number to retrieve.
-	 * @param size          The number of items to include per page.
-	 * @param sortBy        The field to sort the results by.
-	 * @param sortDirection The direction of the sorting (ascending or descending).
-	 * @return A Page object containing the requested list of defects for the
-	 *         specified vehicle.
-	 */
-	Page<VehicleDefectResponse> getAllDefectsByVehicleId(String vehicleId, int no, int size, String sortBy,
-			String sortDirection);
 
 	/**
 	 * Retrieves the image data for the specified vehicle.

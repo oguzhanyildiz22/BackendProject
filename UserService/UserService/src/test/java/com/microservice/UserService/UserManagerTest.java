@@ -1,9 +1,18 @@
 package com.microservice.UserService;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,7 +27,14 @@ import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.client.RestTemplate;
 
@@ -172,70 +188,6 @@ public class UserManagerTest {
         Mockito.verify(userRepository, Mockito.times(1)).findById(userId);
     }
 
-    @Test
-    public void testSoftDeleteUserById() {
-        // Arrange
-        int userId = 1;
-        User user = new User();
-        user.setId(userId);
-        user.setUsername("testuser");
-
-        Mockito.when(userRepository.findById(userId)).thenReturn(Optional.of(user));
-
-        // Act
-        userManager.softDeleteUserById(userId);
-
-        // Assert
-        Mockito.verify(userRepository, Mockito.times(1)).softDeleteById(userId);
-    }
-//    @Test
-//    public void testGetUsers() {
-//        // Arrange
-//        int page = 0;
-//        int size = 10;
-//        String sortBy = "username";
-//        String sortDirection = "asc";
-//
-//        User user1 = new User();
-//        user1.setId(1);
-//        user1.setUsername("user1");
-//
-//        User user2 = new User();
-//        user2.setId(2);
-//        user2.setUsername("user2");
-//
-//        List<User> userList = Arrays.asList(user1, user2);
-//        Page<User> userPage = new PageImpl<>(userList);
-//        
-//        Mockito.when(modelMapperService.forResponse())
-//        .thenReturn(Mockito.mock(ModelMapper.class));
-//
-//        Mockito.when(userRepository.findAll(Mockito.any(Pageable.class)))
-//                .thenReturn(userPage);
-//
-//        UserResponse userResponse1 = new UserResponse();
-//        userResponse1.setId(1);
-//        userResponse1.setUsername("user1");
-//
-//        UserResponse userResponse2 = new UserResponse();
-//        userResponse2.setId(2);
-//        userResponse2.setUsername("user2");
-//
-//        Mockito.when(modelMapperService.forResponse().map(Mockito.any(User.class), Mockito.eq(UserResponse.class)))
-//                .thenReturn(userResponse1, userResponse2);
-//
-//        // Act
-//        Page<UserResponse> result = userManager.getUsers(page, size, sortBy, sortDirection);
-//
-//        // Assert
-//        Assert.assertEquals(userList.size(), result.getContent().size());
-//        Assert.assertEquals(userList.get(0).getUsername(), result.getContent().get(0).getUsername());
-//        Assert.assertEquals(userList.get(1).getUsername(), result.getContent().get(1).getUsername());
-//
-//        Mockito.verify(userRepository, Mockito.times(1)).findAll(Mockito.any(Pageable.class));
-//        Mockito.verify(modelMapperService.forResponse(), Mockito.times(2))
-//                .map(Mockito.any(User.class), Mockito.eq(UserResponse.class));
-//    }
     
     @Test
     public void testUpdateUser() {
@@ -284,5 +236,182 @@ public class UserManagerTest {
         Mockito.verify(passwordEncoder, Mockito.times(1)).encode(Mockito.anyString());
         Mockito.verify(userRepository, Mockito.times(1)).save(Mockito.any(User.class));
     }
+    
+    @Test
+    public void testUpdateUser_Failure() {
+        // Arrange
+        UpdateUserRequest updateUserRequest = new UpdateUserRequest();
+        updateUserRequest.setId(1);
+        updateUserRequest.setUsername("testuser");
+        updateUserRequest.setPassword("newpassword");
+        updateUserRequest.setRoles(Arrays.asList("ROLE_ADMIN"));
+
+        User existingUser = new User();
+        existingUser.setId(1);
+        existingUser.setUsername("testuser");
+        existingUser.setPassword("oldpassword");
+        Role role = new Role();
+        role.setName("ROLE_USER");
+        List<Role> roles = Collections.singletonList(role);
+        existingUser.setRoles(roles);
+
+        Role roleAdmin = new Role();
+        roleAdmin.setName("ROLE_ADMIN");
+
+        RuntimeException expectedException = new RuntimeException("Error updating user");
+
+        Mockito.when(modelMapperService.forRequest())
+            .thenReturn(Mockito.mock(ModelMapper.class));
+        Mockito.when(modelMapperService.forRequest().map(updateUserRequest, User.class)).thenReturn(new User());
+        Mockito.when(passwordEncoder.encode(updateUserRequest.getPassword())).thenReturn("encodedPassword");
+        Mockito.when(roleRepository.findByName(Mockito.eq("ROLE_ADMIN"))).thenReturn(roleAdmin);
+        Mockito.when(userRepository.save(Mockito.any(User.class))).thenThrow(expectedException);
+
+        // Act
+        String result = userManager.updateUser(updateUserRequest);
+
+        // Assert
+        assertEquals("Error updating user", result);
+
+        Mockito.verify(modelMapperService.forRequest(), Mockito.times(1)).map(updateUserRequest, User.class);
+        Mockito.verify(passwordEncoder, Mockito.times(1)).encode(updateUserRequest.getPassword());
+        Mockito.verify(roleRepository, Mockito.times(updateUserRequest.getRoles().size())).findByName(Mockito.anyString());
+        Mockito.verify(userRepository, Mockito.times(1)).save(Mockito.any(User.class));
+    }
+
+    @Test
+    void softDeleteUserById_Successful() {
+        // Arrange
+        int userId = 1;
+
+       
+        doNothing().when(userRepository).softDeleteById(anyInt());
+
+        // Act
+        userManager.softDeleteUserById(userId);
+
+        // Assert
+        verify(userRepository).softDeleteById(userId);
+    }
+
+    @Test
+    void softDeleteUserById_UserNotFound() {
+        // Arrange
+        int userId = 1;
+        String errorMessage = "User not found";
+
+        
+        doThrow(new RuntimeException(errorMessage)).when(userRepository).softDeleteById(anyInt());
+
+        // Act
+        userManager.softDeleteUserById(userId);
+
+        // Assert
+        
+        verify(userRepository).softDeleteById(userId);
+        
+    }
+    
+    @Test
+    public void testGetUsers_Success() {
+        // Arrange
+        int no = 0;
+        int size = 10;
+        String sortBy = "username";
+        String sortDirection = "asc";
+
+        Pageable pageable = PageRequest.of(no, size, Sort.Direction.fromString(sortDirection), sortBy);
+        List<User> users = new ArrayList<>(); 
+        users.add(new User());
+        users.add(new User());
+        
+        Mockito.when(modelMapperService.forResponse()).thenReturn(Mockito.mock(ModelMapper.class));
+        
+        Page<User> pageUsers = new PageImpl<>(users, pageable, users.size());
+        List<UserResponse> expectedResponseList = users.stream()
+                .map(user -> modelMapperService.forResponse().map(user, UserResponse.class))
+                .collect(Collectors.toList());
+ 
+
+        Mockito.when(userRepository.findAllActive(pageable)).thenReturn(pageUsers);
+
+        // Act
+        Page<UserResponse> result = userManager.getUsers(no, size, sortBy, sortDirection);
+
+        // Assert
+        assertEquals(expectedResponseList, result.getContent());
+        assertEquals(pageable, result.getPageable());
+
+        Mockito.verify(userRepository, Mockito.times(1)).findAllActive(pageable);
+    }
+    
+    @Test
+    public void testGetUsers_Failure() {
+        // Arrange
+        int no = 0;
+        int size = 10;
+        String sortBy = "username";
+        String sortDirection = "asc";
+
+        Pageable pageable = PageRequest.of(no, size, Sort.Direction.fromString(sortDirection), sortBy);
+        RuntimeException expectedException = new RuntimeException("Failed to fetch users");
+
+        Mockito.when(userRepository.findAllActive(pageable)).thenThrow(expectedException);
+
+        // Act and Assert
+        assertThrows(RuntimeException.class, () -> userManager.getUsers(no, size, sortBy, sortDirection));
+
+        Mockito.verify(userRepository, Mockito.times(1)).findAllActive(pageable);
+    }
+
+
+    
+    @Test
+	public void testCheckAdminRole_AdminRoleExists() {
+		// Arrange
+		String authorizationHeader = "Bearer token";
+		String responseBody = "ROLE_ADMIN, ROLE_TEAM_LEADER";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Authorization", authorizationHeader);
+		HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+
+		ResponseEntity<String> responseEntity = new ResponseEntity<>(responseBody, HttpStatus.OK);
+
+		Mockito.when(restTemplate.exchange(Mockito.eq(config.getUrl1()), Mockito.eq(HttpMethod.GET), Mockito.eq(entity),
+				Mockito.eq(String.class))).thenReturn(responseEntity);
+
+		// Act
+		boolean result = userManager.checkRole(authorizationHeader);
+
+		// Assert
+		Assert.assertTrue(result);
+		Mockito.verify(restTemplate, Mockito.times(1)).exchange(Mockito.eq(config.getUrl1()),
+				Mockito.eq(HttpMethod.GET), Mockito.eq(entity), Mockito.eq(String.class));
+	}
+
+	@Test
+	public void testCheckAdminRole_AdminRoleNotExists() {
+		// Arrange
+		String authorizationHeader = "Bearer token";
+		String responseBody = "ROLE_OPERATOR, ROLE_USER";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Authorization", authorizationHeader);
+		HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+
+		ResponseEntity<String> responseEntity = new ResponseEntity<>(responseBody, HttpStatus.OK);
+
+		Mockito.when(restTemplate.exchange(Mockito.eq(config.getUrl1()), Mockito.eq(HttpMethod.GET), Mockito.eq(entity),
+				Mockito.eq(String.class))).thenReturn(responseEntity);
+
+		// Act
+		boolean result = userManager.checkRole(authorizationHeader);
+
+		// Assert
+		Assert.assertFalse(result);
+		Mockito.verify(restTemplate, Mockito.times(1)).exchange(Mockito.eq(config.getUrl1()),
+				Mockito.eq(HttpMethod.GET), Mockito.eq(entity), Mockito.eq(String.class));
+	}
  
 }

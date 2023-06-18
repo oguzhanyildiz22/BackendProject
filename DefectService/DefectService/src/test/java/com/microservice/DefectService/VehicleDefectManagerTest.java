@@ -1,12 +1,24 @@
 package com.microservice.DefectService;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.imageio.ImageIO;
+
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -20,6 +32,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.mock.web.MockMultipartFile;
 
 import com.microservice.DefectService.business.concretes.VehicleDefectManager;
@@ -94,6 +107,22 @@ public class VehicleDefectManagerTest {
 		Mockito.verify(vehicleRepository, Mockito.times(1)).findByVehicleId(Mockito.anyString());
 		Mockito.verify(vehicleDefectRepository, Mockito.times(1)).save(Mockito.any(VehicleDefect.class));
 	}
+	@Test
+	public void testAddDefect_Failure_VehicleNotFound() throws IOException {
+	    // Arrange
+	    CreateDefectRequest request = new CreateDefectRequest();
+	    // Set other properties in the request
+	    String vehicleId = "123";
+
+	    Mockito.when(vehicleRepository.findByVehicleId(vehicleId)).thenReturn(null); // Simulate a scenario where vehicle is not found
+
+	    // Act and Assert
+	    assertThrows(NullPointerException.class, () -> vehicleDefectManager.addDefect(request, vehicleId));
+
+	    Mockito.verify(vehicleRepository, Mockito.times(1)).findByVehicleId(Mockito.anyString());
+	    Mockito.verify(vehicleDefectRepository, Mockito.times(0)).save(Mockito.any(VehicleDefect.class));
+	}
+
 
 	@Test
 	public void testGetAllDefects() {
@@ -124,5 +153,30 @@ public class VehicleDefectManagerTest {
 		Mockito.verify(vehicleDefectRepository, Mockito.times(1)).findAll(Mockito.any(Pageable.class));
 
 	}
+	@Test
+	public void testGetAllDefects_Failure() {
+	    // Arrange
+	    int no = 0;
+	    int size = 10;
+	    String sortBy = "vehicleId";
+	    String sortDirection = "ASC";
+
+	    Pageable pageable = PageRequest.of(no, size, Sort.Direction.fromString(sortDirection), sortBy);
+	    Mockito.when(vehicleDefectRepository.findAll(pageable)).thenThrow(new RuntimeException("Failed to fetch defects"));
+
+	    // Act
+	    Throwable exception = assertThrows(RuntimeException.class,
+	            () -> vehicleDefectManager.getAllDefects(no, size, sortBy, sortDirection));
+
+	    // Assert
+	    assertEquals("Failed to fetch defects", exception.getMessage());
+	    Mockito.verify(vehicleDefectRepository, Mockito.times(1)).findAll(pageable);
+	}
+
+
+
+
+
+
 
 }

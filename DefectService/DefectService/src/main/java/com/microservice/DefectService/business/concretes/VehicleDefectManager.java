@@ -100,27 +100,6 @@ public class VehicleDefectManager implements VehicleDefectService {
 	}
 
 	@Override
-	public Page<VehicleDefectResponse> getAllDefectsByVehicleId(String vehicleId, int no, int size, String sortBy,
-			String sortDirection) {
-		
-		logger.info("Begin getAllDefectsByVehicleId method to Fetch vehicles with pagination - Page: {}, Size: {}, SortBy: {}, SortDirection: {}",
-	            no, size, sortBy, sortDirection);
-		
-		Sort.Direction direction = Sort.Direction.fromString(sortDirection);
-		Pageable pageable = PageRequest.of(no, size, direction, sortBy);
-		Page<VehicleDefect> defects = vehicleDefectRepository.findByVehicleId(vehicleId, pageable);
-
-		List<VehicleDefectResponse> responseList = defects.stream()
-				.map(defect -> modelMapperService.forResponse().map(defect, VehicleDefectResponse.class))
-				.collect(Collectors.toList());
-
-		logger.info("Retrieved {} defects for vehicleId: {}, page: {}, size: {}, sortBy: {}, sortDirection: {}",
-				defects.getTotalElements(), vehicleId, no, size, sortBy, sortDirection);
-
-		return new PageImpl<>(responseList, pageable, defects.getTotalElements());
-	}
-
-	@Override
 	@Transactional
 	public byte[] getImage(String vehicleId) throws IOException {
 		

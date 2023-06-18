@@ -80,27 +80,6 @@ public class VehicleDefectController {
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 	}
 
-	@GetMapping("get/{field}")
-	public ResponseEntity<Page<VehicleDefectResponse>> getAll(@PathVariable String field, @RequestParam int no,
-			@RequestParam int size, @RequestParam String sortBy, @RequestParam String sortDirection,
-			@RequestHeader("Authorization") String authorizationHeader) {
-		
-		logger.info(
-				"Get All Defects endpoint called with field: {}, no: {}, size: {}, sortBy: {}, sortDirection: {}, and authorization header: {}",
-				field, no, size, sortBy, sortDirection, authorizationHeader);
-
-		if (vehicleService.checkTeamLeaderRole(authorizationHeader)) {
-			logger.info("User has TEAM LEADER role.");
-
-			Page<VehicleDefectResponse> vehicleDefectDTOPage = vehicleDefectService.getAllDefectsByVehicleId(field, no,
-					size, sortBy, sortDirection);
-
-			return new ResponseEntity<>(vehicleDefectDTOPage, HttpStatus.OK);
-		}
-		logger.warn("User does not have TEAM_LEADER authority. getAll-with-field method was not started.");
-
-		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-	}
 
 	@GetMapping("get-image/{vehicleId}")
 	public ResponseEntity<byte[]> getImage(@PathVariable String vehicleId,
