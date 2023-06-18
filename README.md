@@ -22,10 +22,7 @@ To get started with the project, follow the steps below:
 
 1. Clone the project repositories from GitHub by running the following command : 
    ```sh
-   git clone https://github.com/oguzhanyildiz22/Token-Service.git 
-   ```
-   ```sh
-   git clone https://github.com/oguzhanyildiz22/UserAndDefectServices.git
+   git clone https://github.com/oguzhanyildiz22/BackendProject.git 
    ```
 2. Make sure you have Java JDK 17 or a newer version installed on your computer.
  
@@ -57,11 +54,8 @@ To get started with the project, follow the steps below:
 To get started with the project in a Docker environment, follow the steps below:
 
 1. Clone the project repositories from GitHub: 
-   ```sh
-   git clone https://github.com/oguzhanyildiz22/Token-Service.git 
-   ```
-   ```sh
-   git clone https://github.com/oguzhanyildiz22/UserAndDefectServices.git
+  ```sh
+   git clone https://github.com/oguzhanyildiz22/BackendProject.git 
    ```
 2. Navigate to the project directory: 
    ```sh
