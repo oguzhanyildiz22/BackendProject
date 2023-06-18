@@ -46,6 +46,7 @@ public class AuthController {
 		return result;
 
 	}
+	
 
 	@GetMapping("/getRole")
 	public List<SimpleGrantedAuthority> getRole(@RequestHeader("Authorization") String authorizationHeader) {
