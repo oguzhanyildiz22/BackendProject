@@ -4,10 +4,35 @@
 
 The purpose of this project is to provide backend services. Users can sign up, log in as a registered user to obtain a token, and perform specific actions based on their roles. This project follows a **_microservices architecture_**, where each microservice is responsible for specific tasks. Additionally, the project has been containerized using **_Docker_** to facilitate easier deployment of the application.
 
-**The Architecture of Backend Project:**
+### The Architecture of Backend Project:
 
 ![Project](https://github.com/oguzhanyildiz22/BackendProject/assets/110741518/92d624a6-6b81-4d26-a3e9-b335985abf01)
 
+### Features of microservices: 
+In this project, there are three microservices; 
+
+1. TokenService 
+2. UserService
+3. DefectService
+Each microservice has methods to perform certain operations. Now, let's examine each microservice separately.
+
+**1. TokenService:** </br>
+This microservice allows the user to register using the 'register' method and obtain a JWT token using the 'login' method for the registered user. This token is required to access other microservices because it contains information about the user's role. The user can register with one of three roles in this microservice: 'ADMIN', 'OPERATOR', or 'TEAM_LEADER'. Additionally, this microservice has a method called 'GetRole' which returns the role information in response to a request with a JWT token from other microservices. Spring Security is used in TokenService, and its logic is as follows:</br></br>
+
+![image](https://github.com/oguzhanyildiz22/BackendProject/assets/110741518/03efd85b-bc2e-4c97-b3e6-bf3ac12d9a49)
+
+**2. UserService:**</br>
+In this microservice, a user with the 'ADMIN' role can perform the following operations: adding, deleting, updating users, and listing registered users. Additionally, there is a terminal listing operation that does not require role authorization.
+
+**3. DefectService:**</br>
+To use the operations in this microservice, one must have either the 'OPERATOR' or 'TEAM_LEADER' roles. There are separate operations for each role. A user with the 'OPERATOR' role can add or delete vehicles and add defects to a vehicle. A user with the 'TEAM_LEADER' role can list and sort registered vehicles and defects, and view the image of a specific defect.
+
+### How do the microservices communicate with each other? </br>
+Communication between microservices is facilitated through the RestTemplate method. In this project, when a request is made to other microservices using the token obtained from the TokenService, the token is sent back to the TokenService along with the request for role information, ensuring authentication and authorization.
+</br></br>
+![image](https://github.com/oguzhanyildiz22/BackendProject/assets/110741518/20025ac5-3c0e-4ec4-8717-25bab5f2bbbc)
+</br></br>
+![image](https://github.com/oguzhanyildiz22/BackendProject/assets/110741518/fcb7daa5-e4a2-4fb6-90b2-62a0533382b0)
 
 ## Getting Started
 
