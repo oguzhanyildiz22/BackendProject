@@ -113,9 +113,9 @@ To get started with the project in a Docker environment, follow the steps below:
    ```
   3. Go to the directory where the docker-compose.yml file is located using command prompt
   4. run the docker containers: 
-     ```sh
+   ```sh
      docker-compose up
-     ```
+   ```
 ## Contributing
 
  We welcome contributions to improve Backend Project To contribute, please follow these steps:
