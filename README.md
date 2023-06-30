@@ -146,6 +146,6 @@ To get started with the project in a Docker environment, follow the steps below:
 
  - **Email**: [oguzy2020@gmail.com](mailto:oguzy2020@gmail.com)
  - **GitHub**: [oguzhanyildiz22](https://github.com/oguzhanyildiz22)
- - **LinkedIn**: [Oğuzhan Yıldız](https://www.linkedin.com/in/o%C4%9Fuzhan-yildiz-9b690624b/)
+ - **LinkedIn**: [Oğuzhan Yıldız](https://www.linkedin.com/in/oğuzhanyildiz)
 
  Don't hesitate to reach out to me. We look forward to hearing from you!
