@@ -42,7 +42,7 @@ Communication between microservices is facilitated through the RestTemplate meth
 * Ensure that Maven is installed and being used.
 * Ensure that Docker Hub is installed on your computer.
 
-### Installation 1
+### Installation by using your local computer
 To get started with the project, follow the steps below: 
 
 1. Clone the project repositories from GitHub by running the following command : 
@@ -75,7 +75,7 @@ To get started with the project, follow the steps below:
    ```
    By following these steps, you should be able to successfully install and run the project on your local machine. Feel free to modify the instructions according to your project's specific requirements.
 
-### Installation 2
+### Installation by using Docker
 To get started with the project in a Docker environment, follow the steps below:
 
 1. Clone the project repositories from GitHub: 
