@@ -148,4 +148,4 @@ To get started with the project in a Docker environment, follow the steps below:
  - **GitHub**: [oguzhanyildiz22](https://github.com/oguzhanyildiz22)
  - **LinkedIn**: [Oğuzhan Yıldız](https://www.linkedin.com/in/oğuzhanyildiz)
 
- Don't hesitate to reach out to me. We look forward to hearing from you!
+ Don't hesitate to reach out to me. I look forward to hearing from you!
